@@ -1,0 +1,6 @@
+{
+    "cmake.statusbar.visibility": "icon",
+    "files.associations": {
+        "stdio.h": "c"
+    }
+}
