@@ -23,7 +23,7 @@ These benchmarks are against popular and commonly used (anonymous) repositories.
 
 ## Getting Started
 
-Download the repository. On ARDUINO, the easiest is to simply download the zip file and unzip it somewhere convenient. For Pi Pico, You more likely should clone the repository into a convenient place.
+Download the repository. On ARDUINO, the easiest is to simply download the zip file and unzip it somewhere convenient. For Pi Pico, you more likely should clone the repository into a convenient place.
 
 Note that on all platforms, the complete documentation can be accessed with a web browser at /docs/html/index.html
 
