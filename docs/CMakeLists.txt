@@ -1,2 +1,7 @@
 message(STATUS "docs is empty")
-
+message(STATUS ${PROJECT_SOURCE_DIR})
+configure_file(readme.md.in ${PROJECT_SOURCE_DIR}/README.md)
+message(STATUS "Readme Configured")
+set(README_HDR "/**@mainpage A Fast Driver for LCD displays on the I2C bus for Pi Pico *and* Arduino\n")
+set(README_TRAILER "*/")
+configure_file(readme.md.in ${CMAKE_CURRENT_SOURCE_DIR}/mainpage.dox)
