@@ -471,7 +471,7 @@ Static Public Attributes</h2></td></tr>
 <p >This command causes the buffer to be output to the display before execution.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">location</td><td>The memory address (character code) 0-7 </td></tr>
+    <tr><td class="paramname">charnum</td><td>The memory address (character code) 0-7 </td></tr>
     <tr><td class="paramname">char_map</td><td>The byte array </td></tr>
   </table>
   </dd>
@@ -1340,7 +1340,7 @@ Static Public Attributes</h2></td></tr>
 <p>Output a string to the screen. Naming is more in the style of the Pico SDK, and the Enable_Buffering parameter can be utilized. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">s</td><td>is pointer to the string to display </td></tr>
+    <tr><td class="paramname">str</td><td>is pointer to the string to display </td></tr>
     <tr><td class="paramname">Enable_Buffering</td><td>If true, data is simply added to the output buffer. If false or missing, data is added to the output buffer and the buffer is immediately written to the display. </td></tr>
   </table>
   </dd>

@@ -2,8 +2,9 @@
 # show up in IDEs unless they are listed in add_library.
 
 # Optionally glob, but only for CMake 3.12 or later:
-# file(GLOB HEADER_LIST CONFIGURE_DEPENDS "${ModernCMakeExample_SOURCE_DIR}/include/modern/*.hpp")
-set(HEADER_LIST "${Fast_LCD_I2C_SOURCE_DIR}/src/LCD_I2C.hpp")
+file(GLOB HEADER_LIST CONFIGURE_DEPENDS "${Fast_LCD_I2C_SOURCE_DIR}/src/*.hpp")
+#set(HEADER_LIST "${Fast_LCD_I2C_SOURCE_DIR}/src/LCD_I2C.hpp")
+message(STATUS "Headers: ${HEADER_LIST}")
 
 # Make an automatic library - will be static or dynamic based on user setting
 add_library(LCD_I2C_lib LCD_I2C.cpp ${HEADER_LIST})
@@ -22,3 +23,8 @@ target_link_libraries(LCD_I2C_lib  pico_stdlib hardware_i2c)
  # TREE "${PROJECT_SOURCE_DIR}/include"
   #PREFIX "Header Files"
   #FILES ${HEADER_LIST})
+
+# Put the sources in the Arduino_Library folder too.
+configure_file(LCD_I2C.cpp ${PROJECT_SOURCE_DIR}/Arduino_Library/LCD_I2C.cpp COPYONLY)
+configure_file(LCD_I2C.hpp ${PROJECT_SOURCE_DIR}/Arduino_Library/LCD_I2C.h COPYONLY)
+

@@ -1,4 +1,4 @@
-# Theory of Operation
+# Theory of Operation# {#theory}
 The key to a fast, efficient LCD display driver using the I2C bus is to realize that the I2C bus is *slow*! This has two immediate implications. First, maximizing the bus throughput will maximize the display update speed. Second, the I2C bus is a lot slower than the LCD display in most cases, so no additional timing considerations are required.
 
 To understand why these things are true, we will first give an overview what has to be done to control the display, followed by a brief overview of the I2C bus. We can then set the goals for this driver software, and discuss the implementation approach. Some implementation limitations from the operating environment must also be considered. Finally, we can explain how the software is implemented, and a bit on how to use its more advanced features.

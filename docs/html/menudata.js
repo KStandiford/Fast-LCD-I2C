@@ -23,8 +23,7 @@
  @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var menudata={children:[
-{text:"Main Page",url:"index.html"},
-{text:"Related Pages",url:"pages.html"},
+{text:"Read Me",url:"index.html"},
 {text:"Classes",url:"annotated.html",children:[
 {text:"Class List",url:"annotated.html"},
 {text:"Class Members",url:"functions.html",children:[
@@ -53,8 +52,5 @@ var menudata={children:[
 {text:"s",url:"functions_func.html#index_s"},
 {text:"w",url:"functions_func.html#index_w"}]},
 {text:"Variables",url:"functions_vars.html"}]}]},
-{text:"Files",url:"files.html",children:[
-{text:"File List",url:"files.html"},
-{text:"File Members",url:"globals.html",children:[
-{text:"All",url:"globals.html"},
-{text:"Macros",url:"globals_defs.html"}]}]}]}
+{text:"C++ Interface",url:"class_l_c_d___i2_c.html"},
+{text:"Theory of Operation",url:"theory.html"}]}

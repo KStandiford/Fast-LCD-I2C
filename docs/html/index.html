@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fast LCD I2C driver: A Fast Driver for LCD displays on the I2C bus for Pi Pico &lt;em&gt;and&lt;/em&gt; Arduino</title>
+<title>Fast LCD I2C driver: A &lt;em&gt;Fast&lt;/em&gt; Driver for LCD displays on the I2C bus for Pi Pico &lt;em&gt;and&lt;/em&gt; Arduino</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -40,18 +40,16 @@ $(function() {
 <div id="main-nav"></div>
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">A Fast Driver for LCD displays on the I2C bus for Pi Pico <em>and</em> Arduino </div></div>
+  <div class="headertitle"><div class="title">A <em>Fast</em> Driver for LCD displays on the I2C bus for Pi Pico <em>and</em> Arduino </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md0"></a>
-A Fast LCD I2C Driver</h1>
-<p >This is a driver package for Liquid Crystal displays like the common 1602 and 2004 models using the I2C bus. It has been optimized for speed, yielding typically an order of magnitude improvement. It is compatible with <em>both</em> Arduino and Raspberry Pi Pico environments. For the Pi Pico, both C++ and C interfaces are available.</p>
-<h2><a class="anchor" id="autotoc_md1"></a>
-Introduction</h2>
+<div class="textblock"><p ><a class="anchor" id="mainpage"></a> This is a driver package for Liquid Crystal displays like the common 1602 and 2004 models using the I2C bus. It has been optimized for speed, yielding typically an order of magnitude improvement. It is compatible with <em>both</em> Arduino and Raspberry Pi Pico environments. For the Pi Pico, both C++ and C interfaces are available. (Arduino uses the C++ interface only)</p>
+<h1><a class="anchor" id="autotoc_md0"></a>
+Introduction</h1>
 <p >Liquid Crystal (LCD) displays with 2 lines of 16 characters (model 1602) and 4 lines of 20 characters (model 2004) are inexpensive but versatile and fun displays to add to a micro-controller. Versions with an I2C bus adapter built in are also available and attractive because they only need two output pins for the I2c bus. There are numerous tutorials about these displays on-line, and multiple packages of software.</p>
 <p >Unfortunately, most of the common packages are quite slow when updating the display. No, you cannot notice how long it takes to print "Hello World", but if you are trying to update several fields on the screen fairly quickly, you may find the response to other user and peripheral inputs begins to suffer. That was the motivation for this project.</p>
-<h2><a class="anchor" id="autotoc_md2"></a>
-Timing Results</h2>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Timing Results</h1>
 <p >These benchmarks are against popular and commonly used (anonymous) repositories. The benchmark is:</p><ul>
 <li>Update 4 fields of 6 characters each on the display. The fields are assumed to be in different locations, requiring the cursor to be positioned for each one.</li>
 <li>The I2C bus speed is the typical default of 100,000 bits/second</li>
@@ -65,56 +63,64 @@ Timing Results</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">Pi Pico   </td><td class="markdownTableBodyCenter">136.97 mSec   </td><td class="markdownTableBodyCenter">11.56 mSec   </td><td class="markdownTableBodyCenter">11.8x   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md3"></a>
-Getting Started</h2>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Getting Started</h1>
 <p >Download the repository. On Arduino, the easiest is to simply download the zip file and unzip it somewhere convenient. For Pi Pico, you more likely should clone the repository into a convenient place.</p>
 <p >Note that on all platforms, the complete documentation can be accessed with a web browser at /docs/html/index.html</p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Getting Started on Arduino</h2>
 <h3><a class="anchor" id="autotoc_md4"></a>
-Getting Started on Arduino</h3>
-<h4><a class="anchor" id="autotoc_md5"></a>
-Installing the Library</h4>
+Installing the Library</h3>
 <ul>
 <li>Once you have downloaded the repository, create a new folder called "LCD_I2C" under the folder named "libraries" in your Arduino sketchbook folder. (Create the folder "libraries" if it does not already exist.)</li>
-<li>Copy all the files from the "src" directory into the "LCD_I2C" folder.</li>
-<li>Rename the file "LCD_I2C.hpp" to "LCD_I2C.h". (Otherwise the Arduino library software will refuse to add it to your sketch.)</li>
+<li>Copy all the files from the "Arduino_Library" directory into the "LCD_I2C" folder.</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md6"></a>
-Installing the Examples</h4>
+<h3><a class="anchor" id="autotoc_md5"></a>
+Installing the Examples</h3>
 <p >Copy the contents of the "Arduino_Examples" directory to your Arduino sketchbook folder and try them out!</p>
-<h4><a class="anchor" id="autotoc_md7"></a>
-Usage</h4>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Usage</h3>
 <p >To use the library in your own sketch:</p><ul>
 <li>select <a class="el" href="class_l_c_d___i2_c.html" title="A class for efficiently driving an LDC display connected to the I2C bus on Arduino or Pi Pico.">LCD_I2C</a> from <em>Sketch &gt; Import Library</em>.</li>
 <li><em>Also</em> select Wire from <em>Sketch &gt; Import Library</em>.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
-Getting Started on Raspberry Pi Pico</h2>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Getting Started on Raspberry Pi Pico</h1>
 <p >On the Pi Pico, programming in C++ will make all of the features of this package available. This will also make some advanced cases like multiple displays very easy. However, if you prefer to work in C, a reasonably complete subset of the program interface is available with almost all of the functionality of the C++ version. There are examples included for both languages.</p>
-<h3><a class="anchor" id="autotoc_md9"></a>
-Prerequisites</h3>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Prerequisites</h2>
 <p >In your development environment (IDE) you need:</p><ul>
 <li>The Pi Pico SDK installed with the environmental PATH variables set.</li>
 <li>CMAKE installed.</li>
 <li>MAKE installed.</li>
 </ul>
 <p >You also need a display connected to the default Pi Pico I2C bus pins. <em>Make sure that you use a level shifter chip if you are running the display on 5 volts!</em></p>
-<h3><a class="anchor" id="autotoc_md10"></a>
-Generating the Tests and Examples</h3>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Generating the Tests and Examples</h2>
 <p >Running CMAKE in the base directory of the repository will create the library and the tests and examples in a directory tree in the "build" folder. From there you can load them into the Pi Pico.</p>
-<h4><a class="anchor" id="autotoc_md11"></a>
-C++ Usage</h4>
-<h2><a class="anchor" id="autotoc_md12"></a>
-Built With</h2>
-<p >VSCODE and the MinGW tools Raspberry Pi Pico SDK</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
-Author</h2>
-<p ><b>Keith Standiford</b> - <a href="https://github.com/KStandiford">KStandiford</a></p>
-<h2><a class="anchor" id="autotoc_md14"></a>
-License</h2>
+<h3><a class="anchor" id="autotoc_md10"></a>
+C++ Usage</h3>
+<h1><a class="anchor" id="autotoc_md11"></a>
+Built With</h1>
+<ul>
+<li>VSCODE and the MinGW tools</li>
+<li>Raspberry Pi Pico SDK</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md12"></a>
+Author</h1>
+<ul>
+<li><b>Keith Standiford</b> - <a href="https://github.com/KStandiford">KStandiford</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md13"></a>
+License</h1>
 <p >This project is licensed under the MIT License - see the LICENSE.md file for details</p>
-<h2><a class="anchor" id="autotoc_md15"></a>
-Acknowledgments</h2>
-<p ><a href="https://www.adafruit.com/">Adafruit</a>, whose dedication to documenting their products made it easy to find the documentation to figure this stuff out. <a href="https://github.com/cristiancristea00">Cristian Cristea</a>. Reading his code teaches a <em>lot</em> about modern professional C++. Stanley Reynolds, an old mentor and friend who once said "If you're going to do something stupid, at least make sure that it's <em>fast</em>! </p>
+<h1><a class="anchor" id="autotoc_md14"></a>
+Acknowledgments</h1>
+<ul>
+<li><a href="https://www.adafruit.com/">Adafruit</a>, whose dedication to documenting their products made it easy to find the documentation to figure this stuff out.</li>
+<li><a href="https://github.com/cristiancristea00">Cristian Cristea</a>, who's code taught me a lot about modern professional C++.</li>
+<li><a href="https://www.linkedin.com/in/stanley-reynolds-4bb86040">Stan Reynolds</a>, an old mentor and friend who once said "If you're going to do something stupid, at least make sure that it's <em>fast</em>! </li>
+</ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
