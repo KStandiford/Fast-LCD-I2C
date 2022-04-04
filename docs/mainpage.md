@@ -1,4 +1,4 @@
-# A *Fast* Driver for LCD displays on the I2C bus for Pi Pico *and* Arduino# {#mainpage}
+# A *Fast* Driver for LCD displays on the I2C bus for Pi Pico *and* Arduino {#mainpage}
 
 This is a driver package for Liquid Crystal displays like the common 1602 and 2004 models using the I2C bus. It has been optimized for speed, yielding typically an order of magnitude improvement. It is compatible with *both* Arduino and Raspberry Pi Pico environments. For the Pi Pico, both C++ and C interfaces are available. (Arduino uses the C++ interface only)
 
@@ -79,7 +79,7 @@ Running CMAKE in the base directory of the repository will create the library an
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
