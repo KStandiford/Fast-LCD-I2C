@@ -1,2 +1,4 @@
 # ignore the build directory
 build/
+# ignore the anonymous LCD drivers
+xLCD_I2C.*
