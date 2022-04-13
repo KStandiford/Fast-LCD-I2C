@@ -4,7 +4,7 @@
   <navindex>
     <tab type="mainpage" visible="yes" title="Read Me"/>
     <tab type="pages" visible="no" title="" intro=""/>
-    <tab type="modules" visible="yes" title="" intro=""/>
+    <tab type="modules" visible="no" title="" intro=""/>
     <tab type="namespaces" visible="yes" title="">
       <tab type="namespacelist" visible="yes" title="" intro=""/>
       <tab type="namespacemembers" visible="yes" title="" intro=""/>
@@ -16,7 +16,7 @@
       <tab type="interfaceindex" visible="$ALPHABETICAL_INDEX" title=""/> 
       <tab type="interfacehierarchy" visible="yes" title="" intro=""/>
     </tab>
-    <tab type="classes" visible="yes" title="">
+    <tab type="classes" visible="no" title="">
       <tab type="classlist" visible="yes" title="" intro=""/>
       <tab type="classindex" visible="$ALPHABETICAL_INDEX" title=""/> 
       <tab type="hierarchy" visible="yes" title="" intro=""/>
@@ -37,6 +37,9 @@
     </tab>
     <tab type="examples" visible="yes" title="" intro=""/>  
     <tab type="user" url="@ref LCD_I2C" title="C++ Interface" />
+    <tab type="user" url="./group___arduino__diff.html" title="Arduino Differences" />
+    <tab type="user" url="@ref Cinter" title="C Interface" />
+    <tab type="user" url="@ref I2C_helper" title="I2C Initialization" />
     <tab type="user" url="@ref theory" title="Theory of Operation" />
   </navindex>
 
@@ -182,6 +185,7 @@
   <group>
     <briefdescription visible="yes"/>
     <groupgraph visible="$GROUP_GRAPHS"/>
+    <detaileddescription title=""/>
     <memberdecl>
       <nestedgroups visible="yes" title=""/>
       <dirs visible="yes" title=""/>
@@ -206,7 +210,6 @@
       <friends title=""/>
       <membergroups visible="yes"/>
     </memberdecl>
-    <detaileddescription title=""/>
     <memberdef>
       <pagedocs/>
       <inlineclasses title=""/>

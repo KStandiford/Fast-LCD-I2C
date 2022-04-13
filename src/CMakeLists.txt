@@ -2,12 +2,11 @@
 # show up in IDEs unless they are listed in add_library.
 
 # Optionally glob, but only for CMake 3.12 or later:
-file(GLOB HEADER_LIST CONFIGURE_DEPENDS "${Fast_LCD_I2C_SOURCE_DIR}/src/*.hpp")
-#set(HEADER_LIST "${Fast_LCD_I2C_SOURCE_DIR}/src/LCD_I2C.hpp")
+file(GLOB HEADER_LIST CONFIGURE_DEPENDS "${Fast_LCD_I2C_SOURCE_DIR}/src/*.hpp" "${Fast_LCD_I2C_SOURCE_DIR}/src/*.h")
 message(STATUS "Headers: ${HEADER_LIST}")
 
 # Make an automatic library - will be static or dynamic based on user setting
-add_library(LCD_I2C_lib LCD_I2C.cpp ${HEADER_LIST})
+add_library(LCD_I2C_lib LCD_I2C.cpp LCD_I2C-C.cpp ${HEADER_LIST})
 
 # We need this directory, and users of our library will need it too
 target_include_directories(LCD_I2C_lib PUBLIC .)

@@ -17,6 +17,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
    <div id="projectname">Fast LCD I2C driver<span id="projectnumber">&#160;1.0</span>
    </div>
@@ -41,7 +42,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_l_c_d___i2_c-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">LCD_I2C Class Reference</div></div>
@@ -50,15 +50,7 @@ $(function() {
 
 <p>A class for <em>efficiently</em> driving an LDC display connected to the I2C bus on Arduino or Pi Pico.  
  <a href="class_l_c_d___i2_c.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="_l_c_d___i2_c_8hpp_source.html">LCD_I2C.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:ae8b137d28dca3b2ae98124dbea7b0ae5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_c_d___i2_c.html#ae8b137d28dca3b2ae98124dbea7b0ae5">LCD_I2C</a> (byte address, byte columns, byte rows, i2c_inst *I2C=PICO_DEFAULT_I2C_INSTANCE) noexcept</td></tr>
-<tr class="memdesc:ae8b137d28dca3b2ae98124dbea7b0ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Pi Pico Constructor.  <a href="class_l_c_d___i2_c.html#ae8b137d28dca3b2ae98124dbea7b0ae5">More...</a><br /></td></tr>
-<tr class="separator:ae8b137d28dca3b2ae98124dbea7b0ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:ac8e1368ae2e3811b7f532d310a1ac2d5"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_c_d___i2_c.html#ac8e1368ae2e3811b7f532d310a1ac2d5">CUSTOM_SYMBOL_SIZE</a> = 8</td></tr>
@@ -71,9 +63,14 @@ Static Public Attributes</h2></td></tr>
 <tr class="memdesc:a4d625e382e490cf4807ad2b88e16b4fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">needed for Arduino Constructor  <a href="class_l_c_d___i2_c.html#a4d625e382e490cf4807ad2b88e16b4fd">More...</a><br /></td></tr>
 <tr class="separator:a4d625e382e490cf4807ad2b88e16b4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Pi Pico Constructor</h2></td></tr>
+<tr class="memitem:ae8b137d28dca3b2ae98124dbea7b0ae5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_c_d___i2_c.html#ae8b137d28dca3b2ae98124dbea7b0ae5">LCD_I2C</a> (byte address, byte columns, byte rows, i2c_inst *I2C=PICO_DEFAULT_I2C_INSTANCE) noexcept</td></tr>
+<tr class="memdesc:ae8b137d28dca3b2ae98124dbea7b0ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Pi Pico Constructor.  <a href="class_l_c_d___i2_c.html#ae8b137d28dca3b2ae98124dbea7b0ae5">More...</a><br /></td></tr>
+<tr class="separator:ae8b137d28dca3b2ae98124dbea7b0ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Writing to the screen on the Pi Pico</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp7db4815c0167bf5509f28affa2b114d3"></a>These are the simplist output routines for writing characters to the LCD screen. They are in the spirit of the example in the Pi Pico SDK. Of course the Arduino routines below can also be used on the Pico, and these routines can be used on Arduino.</p>
-<p >Also see the Theory of Operation for hints on maximizing display speed. </p>
+<tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp7db4815c0167bf5509f28affa2b114d3"></a>These are the simplest output routines for writing characters to the LCD screen. They are in the spirit of the example in the Pi Pico SDK. Of course the Arduino routines below can also be used on the Pico, and these routines can be used on Arduino.</p>
+<p >Also see the <a class="el" href="theory.html">Theory of Operation</a> for hints on maximizing display speed. </p>
 </td></tr>
 <tr class="memitem:a9f4522414e54d0e940094b144c849973"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_c_d___i2_c.html#a9f4522414e54d0e940094b144c849973">writeChar</a> (byte val, bool Enable_Buffering=false) noexcept</td></tr>
 <tr class="memdesc:a9f4522414e54d0e940094b144c849973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output a character to the screen.  <a href="class_l_c_d___i2_c.html#a9f4522414e54d0e940094b144c849973">More...</a><br /></td></tr>
@@ -87,7 +84,7 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Writing to the screen on Arduino</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp0c4eac94639ee9cf2b05065698950ea2"></a>On the Arduino, the LCD I2C class is derived from the Arduino Print class, so all the print() methods need to work. These routines override various forms of the <a class="el" href="class_l_c_d___i2_c.html#a89e10f6186cedb584ad333503a906246" title="Override the write byte method of the Arduino print class.">write()</a> methods in the print class to efficiently direct the data from the print() methods to the LCD display. Of course these methods can be called directly on the Arduino or the Pi Pico as well.</p>
-<p >Also see the Theory of Operation for hints on maximizing display speed. </p>
+<p >Also see the <a class="el" href="theory.html">Theory of Operation</a> for hints on maximizing display speed. </p>
 </td></tr>
 <tr class="memitem:a89e10f6186cedb584ad333503a906246"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_c_d___i2_c.html#a89e10f6186cedb584ad333503a906246">write</a> (uint8_t c) noexcept</td></tr>
 <tr class="memdesc:a89e10f6186cedb584ad333503a906246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the write byte method of the Arduino print class.  <a href="class_l_c_d___i2_c.html#a89e10f6186cedb584ad333503a906246">More...</a><br /></td></tr>
@@ -253,11 +250,11 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>The Pi Pico pins and the I2C bus are <b>not</b> initialized!</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The Pi Pico pins and the I2C bus are <b>not</b> initialized! (See <a class="el" href="group___i2_c__helper.html#ga5707bb107d2b8adf096fb0348fd5df7f" title="Helper function to set up the I2C bus on Pi Pico.">LCD_I2C_Setup()</a>)</dd></dl>
 <p>The Pico constructor initializes the object using the provided I2C instance and calls the display's Init() function.</p>
 <p >Remember that constructor usage for ARDUINO and Pi Pico is quite different.</p>
 <p >For ARDUINO: Create the object with the constructor and then call the begin() method. If you wish to change the bus speed, do it <em>before</em> calling begin().</p>
-<p >For PI PICO: Initialize the I2C instance and pins and then create the object by calling the constructor. The bus speed is set during the I2C bus initialization. </p>
+<p >For PI PICO: Initialize the I2C instance and pins (See <a class="el" href="group___i2_c__helper.html#ga5707bb107d2b8adf096fb0348fd5df7f" title="Helper function to set up the I2C bus on Pi Pico.">LCD_I2C_Setup()</a>) and then create the object by calling the constructor. The bus speed is set during the I2C bus initialization. </p>
 
 </div>
 </div>
@@ -1076,7 +1073,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Empties the buffer to "show" any data not yet output to the screen. </p>
-<p >Calling show when the buffer is empty is explicitly allowed! See the Theory of Operation for a discussion about usage. This routine is <em>not</em> needed unless the advanced buffering capabilities have been used by calling output and setCursor routines with the enableBuffering parameter set to TRUE.</p>
+<p >Calling show when the buffer is empty is explicitly allowed! See the <a class="el" href="theory.html">Theory of Operation</a> for a discussion about usage. This routine is <em>not</em> needed unless the advanced buffering capabilities have been used by calling output and setCursor routines with the enableBuffering parameter set to TRUE.</p>
 <dl class="section return"><dt>Returns</dt><dd>(int) The number of bytes transmitted. Remember that each character or command sent to the display may generate 4 or 5 bytes of output to be transmitted, so this will <em>not</em> match the number of characters or comands written. </dd></dl>
 
 </div>

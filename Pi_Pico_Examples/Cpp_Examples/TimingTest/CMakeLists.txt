@@ -1,6 +1,7 @@
 # Tell CMake where to find the executable source file
+# Note that xLCD_I2C.cpp is the driver to compare against!
 add_executable(TimingTestCpp 
-    main.cpp xLCD_I2C.cpp
+    Timing_Test.cpp xLCD_I2C.cpp
     
 )
 

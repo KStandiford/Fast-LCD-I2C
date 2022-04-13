@@ -17,6 +17,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
    <div id="projectname">Fast LCD I2C driver<span id="projectnumber">&#160;1.0</span>
    </div>
@@ -45,24 +46,35 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">LCD_I2C.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;hardware/gpio.h&gt;</code><br />
-<code>#include &lt;hardware/i2c.h&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-<code>#include &lt;cstdint&gt;</code><br />
-<code>#include &quot;<a class="el" href="_l_c_d___i2_c_8hpp_source.html">LCD_I2C.hpp</a>&quot;</code><br />
-</div><table class="memberdecls">
+
+<p>C++ Implementation for the Fast LCD I2C driver.  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:af8a5f9a030b37490617ed858b7afb735"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_c_d___i2_c_8cpp.html#af8a5f9a030b37490617ed858b7afb735">MAXCHARNUM</a>&#160;&#160;&#160;7</td></tr>
 <tr class="separator:af8a5f9a030b37490617ed858b7afb735"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ffdde1147b45c2300884bb5f502f044"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_c_d___i2_c_8cpp.html#a7ffdde1147b45c2300884bb5f502f044">CUSTOMCHARSIZE</a>&#160;&#160;&#160;8</td></tr>
 <tr class="separator:a7ffdde1147b45c2300884bb5f502f044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga5707bb107d2b8adf096fb0348fd5df7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___i2_c__helper.html#ga5707bb107d2b8adf096fb0348fd5df7f">LCD_I2C_Setup</a> (i2c_inst_t *I2C, uint SDA_Pin, uint SCL_Pin, uint I2C_Clock)</td></tr>
+<tr class="memdesc:ga5707bb107d2b8adf096fb0348fd5df7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to set up the I2C bus on Pi Pico.  <a href="group___i2_c__helper.html#ga5707bb107d2b8adf096fb0348fd5df7f">More...</a><br /></td></tr>
+<tr class="separator:ga5707bb107d2b8adf096fb0348fd5df7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >C++ Implementation for the Fast LCD I2C driver. </p>
+<dl class="section author"><dt>Author</dt><dd>Keith Standiford </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2022-04-10</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 Keith Standiford. All rights reserved. </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a7ffdde1147b45c2300884bb5f502f044" name="a7ffdde1147b45c2300884bb5f502f044"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ffdde1147b45c2300884bb5f502f044">&#9670;&nbsp;</a></span>CUSTOMCHARSIZE</h2>
 

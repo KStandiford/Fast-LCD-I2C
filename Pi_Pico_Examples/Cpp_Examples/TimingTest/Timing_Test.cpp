@@ -1,4 +1,17 @@
-
+/**
+ * @file Timing_Test.cpp
+ * @author Keith Standiford
+ * @brief Compare timing to another driver
+ * @version 1.0
+ * @date 2022-04-10
+ * 
+ * @copyright Copyright (c) 2022 Keith Standiford. All rights reserved. 
+ * 
+ * The benchmark is to simulate updating 4 fields of 6 characters each with a set cursor
+ * command for each field. Two different drivers are compared using the same display.
+ * This is just barely OK if you and the drivers are carefull!
+ * Note that the second driver is *NOT* supplied, so some adaptation may be required.
+ */
 #include <memory>
 #include <cstdlib>
 #include <array>
@@ -21,29 +34,30 @@ int main()
 
 
     // This example will use I2C0 on the default SDA and SCL pins (4, 5 on a Pico)
-    int i2cspeed = i2c_init(i2c_default, 100 * 1000);
-    //    i2c_init(i2c_default, 100 * 1000);
+    // and the default I2C
 
-    constexpr auto SDA = PICO_DEFAULT_I2C_SDA_PIN;
-    constexpr auto SCL = PICO_DEFAULT_I2C_SCL_PIN;
+    constexpr auto SDA =  PICO_DEFAULT_I2C_SDA_PIN;
+    constexpr auto SCL =  PICO_DEFAULT_I2C_SCL_PIN;
+    int i2cspeed = LCD_I2C_Setup(i2c_default,SDA, SCL, 100*1000);
 
-    gpio_set_function(PICO_DEFAULT_I2C_SDA_PIN, GPIO_FUNC_I2C);
-    gpio_set_function(PICO_DEFAULT_I2C_SCL_PIN, GPIO_FUNC_I2C);
-    gpio_pull_up(PICO_DEFAULT_I2C_SDA_PIN);
-    gpio_pull_up(PICO_DEFAULT_I2C_SCL_PIN);
+/*    gpio_set_function(SDA, GPIO_FUNC_I2C);
+    gpio_set_function(SCL, GPIO_FUNC_I2C);
+    gpio_pull_up(SDA);
+    gpio_pull_up(SCL);
     // Make the I2C pins available to picotool
-    bi_decl(bi_2pins_with_func(PICO_DEFAULT_I2C_SDA_PIN, PICO_DEFAULT_I2C_SCL_PIN, GPIO_FUNC_I2C));
     bi_decl(bi_1pin_with_name(SDA, "[SDA] LCD screen serial data pin"))
     bi_decl(bi_1pin_with_name(SCL, "[SCL] LCD screen serial clock pin"))
+    bi_decl(bi_2pins_with_func(SDA, SCL, GPIO_FUNC_I2C));
 
-
+    int i2cspeed = i2c_init(i2c_default, 100 * 1000);
+*/    
     constexpr auto LCD_ADDRESS = 0x27;
     constexpr auto LCD_COLUMNS = 20;
     constexpr auto LCD_ROWS = 4;
 
 
-    auto xlcd = std::make_unique<xLCD_I2C>(LCD_ADDRESS, LCD_COLUMNS, LCD_ROWS, i2c_default, SDA, SCL);
     auto lcd = std::make_unique<LCD_I2C>(LCD_ADDRESS, LCD_COLUMNS, LCD_ROWS, i2c_default);
+    auto xlcd = std::make_unique<xLCD_I2C>(LCD_ADDRESS, LCD_COLUMNS, LCD_ROWS, i2c_default, SDA, SCL);
 
 
     xlcd->Clear();

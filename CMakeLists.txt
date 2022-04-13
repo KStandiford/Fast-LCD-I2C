@@ -16,15 +16,8 @@ set(CMAKE_CXX_STANDARD 17)
 # Creates a pico-sdk subdirectory in our project for the libraries
 pico_sdk_init()
 
-find_package(Doxygen)
-if(Doxygen_FOUND)
-    add_subdirectory(docs)
-else()
-    message(STATUS "Doxygen not found!")
-endif()
 
+add_subdirectory(docs)
 add_subdirectory(src)
-add_subdirectory(C_Tests)
-add_subdirectory(Cpp_Tests)
-add_subdirectory(Examples)
+add_subdirectory(Pi_Pico_Examples)
 

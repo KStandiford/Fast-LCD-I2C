@@ -24,33 +24,8 @@
 */
 var menudata={children:[
 {text:"Read Me",url:"index.html"},
-{text:"Classes",url:"annotated.html",children:[
-{text:"Class List",url:"annotated.html"},
-{text:"Class Members",url:"functions.html",children:[
-{text:"All",url:"functions.html",children:[
-{text:"a",url:"functions.html#index_a"},
-{text:"b",url:"functions.html#index_b"},
-{text:"c",url:"functions.html#index_c"},
-{text:"d",url:"functions.html#index_d"},
-{text:"h",url:"functions.html#index_h"},
-{text:"l",url:"functions.html#index_l"},
-{text:"n",url:"functions.html#index_n"},
-{text:"p",url:"functions.html#index_p"},
-{text:"r",url:"functions.html#index_r"},
-{text:"s",url:"functions.html#index_s"},
-{text:"w",url:"functions.html#index_w"}]},
-{text:"Functions",url:"functions_func.html",children:[
-{text:"a",url:"functions_func.html#index_a"},
-{text:"b",url:"functions_func.html#index_b"},
-{text:"c",url:"functions_func.html#index_c"},
-{text:"d",url:"functions_func.html#index_d"},
-{text:"h",url:"functions_func.html#index_h"},
-{text:"l",url:"functions_func.html#index_l"},
-{text:"n",url:"functions_func.html#index_n"},
-{text:"p",url:"functions_func.html#index_p"},
-{text:"r",url:"functions_func.html#index_r"},
-{text:"s",url:"functions_func.html#index_s"},
-{text:"w",url:"functions_func.html#index_w"}]},
-{text:"Variables",url:"functions_vars.html"}]}]},
 {text:"C++ Interface",url:"class_l_c_d___i2_c.html"},
+{text:"Arduino Differences",url:"./group___arduino__diff.html"},
+{text:"C Interface",url:"group___cinter.html"},
+{text:"I2C Initialization",url:"group___i2_c__helper.html"},
 {text:"Theory of Operation",url:"theory.html"}]}

@@ -1,13 +1,14 @@
-/***************************************************************************
+/*
  * @file LCD_I2C.hpp
  * @author Keith Standiford
- * @date December 7, 2021
- * @brief Header file for the LCD_I2C class in Fast LCD for I2C.
- *
- * @copyright Copyright (C) 2021 Keith Standiford
+ * @brief C++ Implementation for the Fast LCD I2C driver
+ * @version 1.00
+ * @date 2022-04-10
+ * 
+ * @copyright Copyright (c) 2022 Keith Standiford. All rights reserved. 
  * @remark Based loosely on the Pico SDK example and the Arduino LiquidCrystal API
  * @remark Compiles for Arduino or for Pi Pico
- **************************************************************************/
+ */
 #pragma once
 //#define ARDUINO 
 
@@ -195,6 +196,11 @@ class LCD_I2C {
 
  public:
 
+ #ifdef ARDUINO
+ // DO NOT Document for Arduino
+ ///@cond
+ #endif
+
     /**
      * @brief A reminder of the size of custom character arrays
      * 
@@ -205,49 +211,70 @@ class LCD_I2C {
     static constexpr byte  LCD_5x10DOTS = 0x04; 
     /** @brief needed for Arduino Constructor */
     static constexpr byte  LCD_5x8DOTS = 0x00; 
-
+#ifdef ARDUINO
+// end conditional documentation and begin Arduino_diff group
+///@endcond
+/**
+ * @defgroup Arduino_diff  Differences in the C++ interfaces for Arduino
+ * 
+ * In the Arduino environment, the %LCD_I2C class constructor is different, as well as the setCursor
+ * function parameters. Here are the differences.
+ */
+#endif
 
 
 
     #ifdef ARDUINO
-    /**
+    /** @name Arduino Constructor and Start-up Functions
      * 
-     *
+     * The Arduino object constructor, and the start-up begin function 
+     */
+    ///@{
+
+    /**
 	 * @brief The ARDUINO Constructor
      * 
      * Remember that constructor usage for ARDUINO and Pi Pico is quite different.
      * 
      * For ARDUINO:
-     * Create the object with the constructor and then call the begin()
+     * Create the object with the constructor and then call the %begin()
      * method. If you wish to change the bus speed, do it *before*
-     * calling begin().
-     * 
-     * For PI PICO:
-     * Initialize the I2C instance and pins and then create the object by calling the constructor.
-     * The bus speed is set during the I2C bus initialization.
-     * 
+     * calling %begin().
+     *  
 	 *
 	 * @param lcd_addr	I2C slave address of the LCD display. Most likely printed on the
 	 *					LCD circuit board, or look in the supplied LCD documentation.
 	 * @param lcd_cols	Number of columns your LCD display has.
 	 * @param lcd_rows	Number of rows (lines) your LCD display has.
-	 * @param charsize	The size in dots that the display has, use LCD_5x10DOTS or LCD_5x8DOTS.
+	 * @param charsize	The size in dots that the display has, use LCD_5x10DOTS or LCD_5x8DOTS. (5x8 is
+     * the default if charsize is omitted.)
+     * 
+     * @ingroup Arduino_diff
 	 */
 	LCD_I2C(uint8_t lcd_addr, uint8_t lcd_cols, uint8_t lcd_rows, uint8_t charsize = LCD_5x8DOTS) noexcept;
 
 	/**
 	 * @brief For Arduino, initialize the I2C bus and the display
      * 
-     * Initialize the I2c bus. Then set the LCD display in the correct begin state. 
-     * begin() must be called before anything else is done.
+     * The I2C bus is initialized by calling Wire.begin(). Then the LCD display 
+     * is placed in the correct initial state. 
+     * %begin() must be called before anything else is done.
+     * 
+     * @ingroup Arduino_diff
 	 */
 	inline void begin() noexcept {
         Wire.begin();
         init();
     } ;
+    ///@}
 
+    ///@cond
 
     #else
+
+    /** @name Pi Pico Constructor
+     */
+    ///@{
 
     /**
      * @brief The Pi Pico Constructor
@@ -257,7 +284,7 @@ class LCD_I2C {
      * @param columns The LCD's number of columns
      * @param rows The LCD's number of rows (lines)
      * @param I2C The I2C instance
-     * @note The Pi Pico pins and the I2C bus are **not** initialized!
+     * @note The Pi Pico pins and the I2C bus are **not** initialized! (See LCD_I2C_Setup())
      * 
      * The Pico constructor initializes the object using the
      * provided I2C instance and calls the display's Init() function.
@@ -270,21 +297,23 @@ class LCD_I2C {
      * calling begin().
      * 
      * For PI PICO:
-     * Initialize the I2C instance and pins and then create the object by calling the constructor.
+     * Initialize the I2C instance and pins (See LCD_I2C_Setup()) 
+     * and then create the object by calling the constructor.
      * The bus speed is set during the I2C bus initialization.
      * 
      */
     LCD_I2C(byte address, byte columns, byte rows, i2c_inst *I2C = PICO_DEFAULT_I2C_INSTANCE) noexcept;
+    ///@}
 
     #endif
 
 
     /** @name Writing to the screen on the Pi Pico
-     * These are the simplist output routines for writing characters to the LCD screen. They
+     * These are the simplest output routines for writing characters to the LCD screen. They
      * are in the spirit of the example in the Pi Pico SDK. Of course the Arduino routines below can
      * also be used on the Pico, and these routines can be used on Arduino. 
      * 
-     * Also see the Theory of Operation for hints on maximizing display speed.
+     * Also see the [Theory of Operation](@ref theory) for hints on maximizing display speed.
      */
     ///@{
     /**
@@ -324,7 +353,7 @@ class LCD_I2C {
      * in the print class to efficiently direct the data from the print() methods to the LCD display. 
      * Of course these methods can be called directly on the Arduino or the Pi Pico as well. 
      * 
-     * Also see the Theory of Operation for hints on maximizing display speed.
+     * Also see the [Theory of Operation](@ref theory) for hints on maximizing display speed.
      *      
      */
     ///@{
@@ -408,6 +437,20 @@ class LCD_I2C {
 
     void setCursor(byte line, byte position, bool Enable_Buffering= false) noexcept;
     #else
+    ///@endcond
+    /** @name Arduino Cursor Positioning
+     *      
+     */
+    ///@{
+    /**
+     * @brief For Arduino, move the input cursor to a location on the screen.
+     * 
+     * All output to the screen is placed at the current cursor position. 
+     * In the default mode, the cursor then advances one position to the right.
+     * The cursor *does not* scroll to the next line.
+     *
+     */
+
     /**
      * @param position Specifies the position on the row (or column) on the display
      * @param line Specifies the row (or line) on the display
@@ -416,9 +459,12 @@ class LCD_I2C {
      * is immediately written to the display. 
      * @warning Line and position parameters **swap positions** between Arduino and Pi Pico SDK!
      * @warning (So Sad!) This is the ARDUINO version!
+     * 
+     * @ingroup Arduino_diff
      */
 
     void setCursor(byte position, byte line, bool Enable_Buffering= false) noexcept;
+    ///@cond
     #endif    
 
     /**
@@ -651,7 +697,7 @@ class LCD_I2C {
     /**
      * @brief Empties the buffer to "show" any data not yet output to the screen.
      * 
-     * Calling show when the buffer is empty is explicitly allowed! See the Theory of Operation for
+     * Calling show when the buffer is empty is explicitly allowed! See the [Theory of Operation](@ref theory) for
      * a discussion about usage. This routine is *not* needed unless the
      * advanced buffering capabilities have been used by calling output and setCursor routines
      * with the enableBuffering parameter set to TRUE.
@@ -663,5 +709,42 @@ class LCD_I2C {
      */
     int show(void) noexcept;
     ///@}
-
+    #ifdef ARDUINO
+    ///@endcond 
+    #endif
 };
+
+#ifndef ARDUINO
+#ifndef I2C_Setup_defined
+    ///@cond    do not document in DOXYGEN
+    #define I2C_Setup_defined
+    ///@endcond
+
+    /** @defgroup I2C_helper I2C Setup helper for Pi Pico
+     * 
+     * In the Pi Pico environment, there is a helper function to set up the 
+     * I2C bus and the pins required.
+     */
+
+    /**
+     * @brief Helper function to set up the I2C bus on Pi Pico
+     * 
+     * Sets up the I2C bus given instance on the given pins with a specified clock rate. Defines the pins for the
+     * pico tools. It can be called from C *or* C++.
+     * 
+     * @param I2C   is the I2C bus instance to use. Either i2c0 or i2c1.
+     * @param SDA_Pin   is the Pi Pico Pin for the I2C SDA (data) line. 
+     * @param SCL_Pin   is the Pi Pico Pin for the I2C SCL (clock) line.
+     * @param I2C_Clock is the I2C bus speed. Typically 100000 or 400000.
+     * 
+     * @return (int)  The actual (theoretical) I2C speed from i2c_init
+     * 
+     * @ingroup I2C_helper
+     */
+
+    extern "C" int LCD_I2C_Setup(i2c_inst_t* I2C, uint SDA_Pin, uint SCL_Pin, uint I2C_Clock) ;
+;
+#endif
+#endif
+
+
