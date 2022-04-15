@@ -31,9 +31,9 @@ Note that on all platforms, the complete documentation can be accessed with a we
 
 #### Installing the Library
 
- - Once you have downloaded the repository, create a new folder called `%LCD_I2C` under the folder named `libraries` in your 
+ - Once you have downloaded the repository, create a new folder called `@ex@LCD_I2C` under the folder named `libraries` in your 
  Arduino sketchbook folder. (Create the folder `libraries` if it does not already exist.)
- - Copy all the files from the `Arduino_Library` directory into the `%LCD_I2C` folder. 
+ - Copy all the files from the `Arduino_Library` directory into the `@ex@LCD_I2C` folder. 
 
 #### Installing the Examples
 
@@ -41,7 +41,7 @@ Note that on all platforms, the complete documentation can be accessed with a we
 
 #### Usage 
 To use the library in your own sketch:
- -  select *%LCD_I2C* from *Sketch > Import Library*.
+ -  select *@ex@LCD_I2C* from *Sketch > Import Library*.
  - *Also* select *Wire* from *Sketch > Import Library*.
 
 This will add the following to your sketch:
@@ -72,10 +72,10 @@ in the `build` folder. From there you can load the examples into the Pi Pico.
 
 ### Adding the Library to Your Project
 
-You must add a library target of type `IMPORT` for %LCD_I2C and tell CMake where to find it,
+You must add a library target of type `IMPORT` for @ex@LCD_I2C and tell CMake where to find it,
 as well as the include files.  This is done by adding an `add_libraries` command to
 your `CmakeLists` file. The following example is for the HelloWorld example, but it has been moved *outside*
-the %LCD_I2C project. You must modify the `set(LCD_I2C_PROJECT_PATH ...)` line to match
+the @ex@LCD_I2C project. You must modify the `set(LCD_I2C_PROJECT_PATH ...)` line to match
 your environment.
 
 ~~~~{.cmake}
