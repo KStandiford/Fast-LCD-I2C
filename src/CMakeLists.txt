@@ -2,20 +2,20 @@
 # show up in IDEs unless they are listed in add_library.
 
 # Optionally glob, but only for CMake 3.12 or later:
-file(GLOB HEADER_LIST CONFIGURE_DEPENDS "${Fast_LCD_I2C_SOURCE_DIR}/src/*.hpp" "${Fast_LCD_I2C_SOURCE_DIR}/src/*.h")
-message(STATUS "Headers: ${HEADER_LIST}")
+file(GLOB HEADER_LIST CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/src/*.hpp" "${PROJECT_SOURCE_DIR}/src/*.h")
 
-# Make an automatic library - will be static or dynamic based on user setting
-add_library(LCD_I2C_lib LCD_I2C.cpp LCD_I2C-C.cpp ${HEADER_LIST})
+# Make an automatic library 
+add_library(LCD_I2C STATIC LCD_I2C.cpp LCD_I2C-C.cpp ${HEADER_LIST})
 
 # We need this directory, and users of our library will need it too
-target_include_directories(LCD_I2C_lib PUBLIC .)
+target_include_directories(LCD_I2C PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-# This depends on (header only) boost
-target_link_libraries(LCD_I2C_lib  pico_stdlib hardware_i2c)
+# This library needs pico_stdlib and hardware_i2C from the Pico SDK so
+# they are automatically included in this step. This allows us to leave them out
+# of the target_link_libraries commands within the project, but they must be
+# added back in if the library is imported.
+target_link_libraries(LCD_I2C  PUBLIC pico_stdlib hardware_i2c)
 
-# All users of this library will need at least C++11
-#target_compile_features(modern_library PUBLIC cxx_std_11)
 
 # IDEs should put the headers in a nice place
 #source_group(
@@ -23,7 +23,7 @@ target_link_libraries(LCD_I2C_lib  pico_stdlib hardware_i2c)
   #PREFIX "Header Files"
   #FILES ${HEADER_LIST})
 
-# Put the sources in the Arduino_Library folder too.
+# Put the driver sources in the Arduino_Library folder too, so it is always current.
 configure_file(LCD_I2C.cpp ${PROJECT_SOURCE_DIR}/Arduino_Library/LCD_I2C.cpp COPYONLY)
 configure_file(LCD_I2C.hpp ${PROJECT_SOURCE_DIR}/Arduino_Library/LCD_I2C.h COPYONLY)
 

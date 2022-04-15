@@ -12,12 +12,18 @@
  * C interfaces.
  * 
  */
-#include "pico/stdlib.h"
-#include "hardware/i2c.h"
-#include "LCD_I2C-C.h"
+#include <pico/stdlib.h>
+#include <LCD_I2C-C.h>
 
 
-// we assume a 16 char, 2 line display (1602 model)
+/* we assume a 16 char, 2 line display (1602 model)
+ and the normal default display address.
+ We set the I2C bus speed to the default low speed value
+ You can increase it to 400000 if your display interface chip
+ can support it. (Try it and if you don't see garbage maybe it's
+ OK!)
+ */
+
 #define LCD_ADDRESS 0x27
 #define LCD_COLUMNS 16
 #define LCD_ROWS 2
@@ -36,7 +42,7 @@ int main()
     lcd_init(LCD_ADDRESS, LCD_COLUMNS, LCD_ROWS, i2c_default);
 
 /*  After initialization, the display is clear, the cursor is on the first line and character, 
-    and the backlight is on. We will output the message on two lines just so cursor contorl is used
+    and the backlight is on. We will output the message on two lines just so cursor control is used
     once and then loop forever...
     */
 

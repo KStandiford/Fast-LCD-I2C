@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fast LCD I2C driver: A &lt;em&gt;Fast&lt;/em&gt; LCD I2C Driver</title>
+<title>Fast LCD I2C driver: A Fast Driver for LCD displays on the I2C bus for Pi Pico &lt;em&gt;and&lt;/em&gt; Arduino</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,6 +17,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
    <div id="projectname">Fast LCD I2C driver<span id="projectnumber">&#160;1.0</span>
    </div>
@@ -40,10 +41,10 @@ $(function() {
 <div id="main-nav"></div>
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">A <em>Fast</em> LCD I2C Driver </div></div>
+  <div class="headertitle"><div class="title">A Fast Driver for LCD displays on the I2C bus for Pi Pico <em>and</em> Arduino </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >This is a driver package for Liquid Crystal displays like the common 1602 and 2004 models using the I2C bus. It has been optimized for speed, yielding typically an order of magnitude improvement. It is compatible with <em>both</em> Arduino and Raspberry Pi Pico environments. For the Pi Pico, both C++ and C interfaces are available.</p>
+<div class="textblock"><p >This is a driver package for Liquid Crystal displays like the common 1602 and 2004 models using the I2C bus. It has been optimized for speed, yielding typically an order of magnitude improvement. It is compatible with <em>both</em> Arduino and Raspberry Pi Pico environments. For the Pi Pico, both C++ and C interfaces are available. (Arduino uses the C++ interface only)</p>
 <h1><a class="anchor" id="autotoc_md17"></a>
 Introduction</h1>
 <p >Liquid Crystal (LCD) displays with 2 lines of 16 characters (model 1602) and 4 lines of 20 characters (model 2004) are inexpensive but versatile and fun displays to add to a micro-controller. Versions with an I2C bus adapter built in are also available and attractive because they only need two output pins for the I2c bus. There are numerous tutorials about these displays on-line, and multiple packages of software.</p>
@@ -73,8 +74,7 @@ Getting Started on Arduino</h2>
 Installing the Library</h3>
 <ul>
 <li>Once you have downloaded the repository, create a new folder called "LCD_I2C" under the folder named "libraries" in your Arduino sketchbook folder. (Create the folder "libraries" if it does not already exist.)</li>
-<li>Copy all the files from the "src" directory into the "LCD_I2C" folder.</li>
-<li>Rename the file "LCD_I2C.hpp" to "LCD_I2C.h". (Otherwise the Arduino library software will refuse to add it to your sketch.)</li>
+<li>Copy all the files from the "Arduino_Library" directory into the "LCD_I2C" folder.</li>
 </ul>
 <h3><a class="anchor" id="autotoc_md22"></a>
 Installing the Examples</h3>
@@ -85,6 +85,9 @@ Usage</h3>
 <li>select <a class="el" href="class_l_c_d___i2_c.html" title="A class for efficiently driving an LDC display connected to the I2C bus on Arduino or Pi Pico.">LCD_I2C</a> from <em>Sketch &gt; Import Library</em>.</li>
 <li><em>Also</em> select Wire from <em>Sketch &gt; Import Library</em>.</li>
 </ul>
+<p >This will add the following to your sketch: </p><pre class="fragment">#include &lt;Wire.h&gt;
+#include &lt;LCD_I2C.h&gt;
+</pre><p >See the documentation sections on the <b>C++ Interface</b>, and <b>Arduino Differences</b>.</p>
 <h1><a class="anchor" id="autotoc_md24"></a>
 Getting Started on Raspberry Pi Pico</h1>
 <p >On the Pi Pico, programming in C++ will make all of the features of this package available. This will also make some advanced cases like multiple displays very easy. However, if you prefer to work in C, a reasonably complete subset of the program interface is available with almost all of the functionality of the C++ version. There are examples included for both languages.</p>
@@ -97,30 +100,70 @@ Prerequisites</h2>
 </ul>
 <p >You also need a display connected to the default Pi Pico I2C bus pins. <em>Make sure that you use a level shifter chip if you are running the display on 5 volts!</em></p>
 <h2><a class="anchor" id="autotoc_md26"></a>
-Generating the Tests and Examples</h2>
-<p >Running CMAKE in the base directory of the repository will create the library and the tests and examples in a directory tree in the "build" folder. From there you can load them into the Pi Pico.</p>
-<h3><a class="anchor" id="autotoc_md27"></a>
+Generating the Library and Examples</h2>
+<p >Running CMAKE in the base directory of the repository will create the library and examples in a directory tree in the /build folder. From there you can load the examples into the Pi Pico.</p>
+<h2><a class="anchor" id="autotoc_md27"></a>
+Adding the Library to Your Project</h2>
+<p >You must add a library target of type "IMPORT" for LCD_I2C and tell CMake where to find it, as well as the include files. This is done by adding an <code>add_libraries</code> command to your CmakeLists file. The following example is for the HelloWorld example, but it has been moved <em>outside</em> the LCD_I2C project. You must modify the <code>set(LCD_I2C_PROJECT_PATH ...)</code> line to match your environment. </p><pre class="fragment"># Set minimum required version of CMake
+cmake_minimum_required(VERSION 3.12)
+
+# Include build functions from Pico SDK
+include( $ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
+
+# Set name of project (as PROJECT_NAME) and C/C++ standards
+project(HelloWorld
+    LANGUAGES C CXX ASM)
+
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
+
+# Set the path to the LCD_I2C Project Directory
+set(LCD_I2C_PROJECT_PATH "&lt;FULL path to location of LCD_I2C Project&gt;")
+
+# Creates a pico-sdk subdirectory in our project for the libraries
+pico_sdk_init()
+# Tell CMake where to find the executable source file
+add_executable(HelloWorld HelloWorld.c )
+
+#Add the imported library from LCD_I2C
+add_library(LCD_I2C STATIC IMPORTED)
+    # and set the path to find it
+    set_target_properties(LCD_I2C PROPERTIES
+        IMPORTED_LOCATION ${LCD_I2C_PROJECT_PATH}/build/src/libLCD_I2C.a
+        INTERFACE_INCLUDE_DIRECTORIES ${LCD_I2C_PROJECT_PATH}/src)
+
+# Create map/bin/hex/uf2 files
+pico_add_extra_outputs(HelloWorld)
+
+# Link to LCD_I2C library, pico_stdlib (gpio, time, etc. functions) and the hardware_i2c library
+target_link_libraries(HelloWorld LCD_I2C pico_stdlib hardware_i2c)
+
+# Enable usb output, disable uart output
+pico_enable_stdio_usb(HelloWorld 1)
+pico_enable_stdio_uart(HelloWorld 0)
+</pre> <h3><a class="anchor" id="autotoc_md28"></a>
 C++ Usage</h3>
-<h1><a class="anchor" id="autotoc_md28"></a>
+<p >See the documentation sections on the <b>C++ Interface</b>, and <b>I2C Initialization</b>.</p>
+<h1><a class="anchor" id="autotoc_md29"></a>
 Built With</h1>
 <ul>
 <li>VSCODE and the MinGW tools</li>
 <li>Raspberry Pi Pico SDK</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md29"></a>
+<h1><a class="anchor" id="autotoc_md30"></a>
 Author</h1>
 <ul>
 <li><b>Keith Standiford</b> - <a href="https://github.com/KStandiford">KStandiford</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md30"></a>
-License</h1>
-<p >This project is licensed under the MIT License - see the LICENSE.md file for details</p>
 <h1><a class="anchor" id="autotoc_md31"></a>
+License</h1>
+<p >This project is licensed under the MIT License - see the LICENSE file for details</p>
+<h1><a class="anchor" id="autotoc_md32"></a>
 Acknowledgments</h1>
 <ul>
 <li><a href="https://www.adafruit.com/">Adafruit</a>, whose dedication to documenting their products made it easy to find the documentation to figure this stuff out.</li>
-<li><a href="https://github.com/cristiancristea00">Cristian Cristea</a>. Reading his code teaches a <em>lot</em> about modern professional C++.</li>
-<li>Stanley Reynolds, an old mentor and friend who once said "If you're going to do something stupid, at least make sure that it's <em>fast</em>! </li>
+<li><a href="https://github.com/cristiancristea00">Cristian Cristea</a>, who's code taught me a lot about modern professional C++.</li>
+<li><a href="https://www.linkedin.com/in/stanley-reynolds-4bb86040">Stan Reynolds</a>, an old mentor and friend who once said "If you're going to do something stupid, at least make sure that it's <em>fast</em>! </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

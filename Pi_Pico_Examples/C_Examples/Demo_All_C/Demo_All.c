@@ -11,13 +11,11 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "pico/stdlib.h"
-#include "hardware/i2c.h"
-#include "pico/binary_info.h"
-#include "LCD_I2C-C.h"
+#include <pico/stdlib.h>
+#include <hardware/i2c.h>
+#include <pico/binary_info.h>
+#include <LCD_I2C-C.h>
 
-//int LCD_I2C_Setup(i2c_inst_t* I2C, uint SDA_Pin, uint SCL_Pin, uint I2C_Clock) ;
-// need to clean that up  in the headers
 
 
 // we assume a 16 char, 2 line display (1602 model)

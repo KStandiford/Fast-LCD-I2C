@@ -19,10 +19,10 @@
 #else
 #include <hardware/gpio.h>
 #include <hardware/i2c.h>
-#include "pico/binary_info.h"
+#include <pico/binary_info.h>
 #include <string.h>
 #include <cstdint>
-#include "LCD_I2C.hpp"
+#include <LCD_I2C.hpp>
 #endif
 
 

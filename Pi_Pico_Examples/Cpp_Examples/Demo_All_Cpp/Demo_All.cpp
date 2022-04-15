@@ -14,10 +14,10 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "pico/stdlib.h"
-#include "hardware/i2c.h"
-#include "pico/binary_info.h"
-#include "LCD_I2C.hpp"
+#include <pico/stdlib.h>
+#include <hardware/i2c.h>
+#include <pico/binary_info.h>
+#include <LCD_I2C.hpp>
 
 
 // we have a 16 char, 2 line display

@@ -5,7 +5,7 @@
  * @version 1.0
  * @date 2022-04-10
  * 
- * @copyright Copyright (c) 2022 Keith Standiford. All rights reserved. 
+ * @copyright Copyright (c) 2022 Keith Standiford. All rights reserved.
  * 
  * These are the wrappers to allow the Fast LCD I2C driver (which is written in C++)
  * to be used from a C program. The interface is simplified, and the buffering commands are
@@ -18,8 +18,8 @@
 
 // Includes for Pi Pico
 #include <string.h>
-#include "LCD_I2C-C.h"
-#include "LCD_I2C.hpp"
+#include <LCD_I2C-C.h>
+#include <LCD_I2C.hpp>
 
 
 //  hidden pointer to LCD_I2C instance
