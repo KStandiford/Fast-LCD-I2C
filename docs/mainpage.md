@@ -65,6 +65,18 @@ In your development environment (IDE) you need:
 
 You also need a display connected to the default Pi Pico I2C bus pins. *Make sure that you use a level shifter chip if you are running the display on 5 volts!*
 
+### Quick Start
+
+The cleanest approach is to build the libraries on your system, and include them in
+the CMakeLists files for your project as demonstrated in the next section. However, if
+you want to be as simple as possible...
+
+The fastest way to get started using the driver is to copy the sources and include 
+files to your project directory and add the sources to your `add_executable` CMake command.
+(The sources are in `/src` and the includes are in `/src/include`.) For C++ projects, you only need 
+`LCD_I2C.cpp` and `LCD_I2C.hpp`. For C projects, you need *all* the source and header files, 
+but you should include *only* `LCD_I2C-C.h` in your program.
+
 ### Generating the Library and Examples
 
 Running CMAKE in the base directory of the repository will create the library and examples in a directory tree 
@@ -74,8 +86,8 @@ in the `build` folder. From there you can load the examples into the Pi Pico.
 
 You must add a library target of type `IMPORT` for %LCD_I2C and tell CMake where to find it,
 as well as the include files.  This is done by adding an `add_libraries` command to
-your `CmakeLists` file. The following example is for the HelloWorld example, but it has been moved *outside*
-the %LCD_I2C project. You must modify the `set(LCD_I2C_PROJECT_PATH ...)` line to match
+your `CMakeLists` file. The following CMakeLists is for the HelloWorld example, but it has been moved *outside*
+the Fast-LCD-I2C project. You must modify the `set(LCD_I2C_PROJECT_PATH ...)` line to match
 your environment.
 
 ~~~~{.cmake}
@@ -84,7 +96,7 @@ your environment.
 cmake_minimum_required(VERSION 3.12)
 
 # Include build functions from Pico SDK
-include( $ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
+include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 
 # Set name of project (as PROJECT_NAME) and C/C++ standards
 project(HelloWorld
@@ -94,11 +106,10 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
 # Set the path to the LCD_I2C Project Directory
-set(LCD_I2C_PROJECT_PATH "<FULL path to location of LCD_I2C Project>")
+set(LCD_I2C_PROJECT_PATH "<Path to the repository location>")
 
 # Creates a pico-sdk subdirectory in our project for the libraries
 pico_sdk_init()
-
 # Tell CMake where to find the executable source file
 add_executable(HelloWorld HelloWorld.c )
 
@@ -107,7 +118,7 @@ add_library(LCD_I2C STATIC IMPORTED)
     # and set the path to find it
     set_target_properties(LCD_I2C PROPERTIES
         IMPORTED_LOCATION ${LCD_I2C_PROJECT_PATH}/build/src/libLCD_I2C.a
-        INTERFACE_INCLUDE_DIRECTORIES ${LCD_I2C_PROJECT_PATH}/src)
+        INTERFACE_INCLUDE_DIRECTORIES ${LCD_I2C_PROJECT_PATH}/src/include)
 
 # Create map/bin/hex/uf2 files
 pico_add_extra_outputs(HelloWorld)

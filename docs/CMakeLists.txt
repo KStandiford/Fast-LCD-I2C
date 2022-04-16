@@ -24,9 +24,10 @@ if(Doxygen_FOUND)
     unset(ARDUINO_DOXY)
     configure_file(Doxyfile.in ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile)
     # get the dependencies
-    file(GLOB DEPENDS_LIST CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/src/*.hpp"  "${PROJECT_SOURCE_DIR}/src/*.h"
-    "${PROJECT_SOURCE_DIR}/src/*.cpp" "${PROJECT_SOURCE_DIR}/src/*.c" 
-    "${CMAKE_CURRENT_SOURCE_DIR}/*.in" "${CMAKE_CURRENT_SOURCE_DIR}/*.xml" )
+    file(GLOB DEPENDS_LIST CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/src/include/*.hpp" 
+        "${PROJECT_SOURCE_DIR}/src/include/*.h"
+        "${PROJECT_SOURCE_DIR}/src/*.cpp" "${PROJECT_SOURCE_DIR}/src/*.c" 
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.in" "${CMAKE_CURRENT_SOURCE_DIR}/*.xml" )
     #message(STATUS "${DEPENDS_LIST}")
     add_custom_command( OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/html/group___arduino__diff.html
         DEPENDS ${DEPENDS_LIST}    

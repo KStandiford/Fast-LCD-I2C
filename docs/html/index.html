@@ -21,7 +21,7 @@
   <td id="projectalign">
    <div id="projectname">Fast LCD I2C driver<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">Fast driver for LCDs on I2C for Pi-Pico  and Arduino</div>
+   <div id="projectbrief">Fast driver for LCDs on I2C for Pi-Pico and Arduino</div>
   </td>
  </tr>
  </tbody>
@@ -100,16 +100,20 @@ Prerequisites</h2>
 </ul>
 <p >You also need a display connected to the default Pi Pico I2C bus pins. <em>Make sure that you use a level shifter chip if you are running the display on 5 volts!</em></p>
 <h2><a class="anchor" id="autotoc_md9"></a>
+Quick Start</h2>
+<p >The cleanest approach is to build the libraries on your system, and include them in the CMakeLists files for your project as demonstrated in the next section. However, if you want to be as simple as possible...</p>
+<p >The fastest way to get started using the driver is to copy the sources and include files to your project directory and add the sources to your <code>add_executable</code> CMake command. (The sources are in <code>/src</code> and the includes are in <code>/src/include</code>.) For C++ projects, you only need <code><a class="el" href="_l_c_d___i2_c_8cpp.html" title="C++ Implementation for the Fast LCD I2C driver.">LCD_I2C.cpp</a></code> and <code><a class="el" href="_l_c_d___i2_c_8hpp.html">LCD_I2C.hpp</a></code>. For C projects, you need <em>all</em> the source and header files, but you should include <em>only</em> <code><a class="el" href="_l_c_d___i2_c-_c_8h.html" title="Header file for C wrapper of the LCD_I2C class in Fast LCD for I2C.">LCD_I2C-C.h</a></code> in your program.</p>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Generating the Library and Examples</h2>
 <p >Running CMAKE in the base directory of the repository will create the library and examples in a directory tree in the <code>build</code> folder. From there you can load the examples into the Pi Pico.</p>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Adding the Library to Your Project</h2>
-<p >You must add a library target of type <code>IMPORT</code> for LCD_I2C and tell CMake where to find it, as well as the include files. This is done by adding an <code>add_libraries</code> command to your <code>CmakeLists</code> file. The following example is for the HelloWorld example, but it has been moved <em>outside</em> the LCD_I2C project. You must modify the <code>set(LCD_I2C_PROJECT_PATH ...)</code> line to match your environment.</p>
+<p >You must add a library target of type <code>IMPORT</code> for LCD_I2C and tell CMake where to find it, as well as the include files. This is done by adding an <code>add_libraries</code> command to your <code>CMakeLists</code> file. The following CMakeLists is for the HelloWorld example, but it has been moved <em>outside</em> the Fast-LCD-I2C project. You must modify the <code>set(LCD_I2C_PROJECT_PATH ...)</code> line to match your environment.</p>
 <div class="fragment"><div class="line"># Set minimum required version of CMake</div>
 <div class="line">cmake_minimum_required(VERSION 3.12)</div>
 <div class="line"> </div>
 <div class="line"># Include build functions from Pico SDK</div>
-<div class="line">include( $ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)</div>
+<div class="line">include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)</div>
 <div class="line"> </div>
 <div class="line"># Set name of project (as PROJECT_NAME) and C/C++ standards</div>
 <div class="line">project(HelloWorld</div>
@@ -119,11 +123,10 @@ Adding the Library to Your Project</h2>
 <div class="line">set(CMAKE_CXX_STANDARD 17)</div>
 <div class="line"> </div>
 <div class="line"># Set the path to the LCD_I2C Project Directory</div>
-<div class="line">set(LCD_I2C_PROJECT_PATH &quot;&lt;FULL path to location of LCD_I2C Project&gt;&quot;)</div>
+<div class="line">set(LCD_I2C_PROJECT_PATH &quot;&lt;Path to the repository location&gt;&quot;)</div>
 <div class="line"> </div>
 <div class="line"># Creates a pico-sdk subdirectory in our project for the libraries</div>
 <div class="line">pico_sdk_init()</div>
-<div class="line"> </div>
 <div class="line"># Tell CMake where to find the executable source file</div>
 <div class="line">add_executable(HelloWorld HelloWorld.c )</div>
 <div class="line"> </div>
@@ -132,7 +135,7 @@ Adding the Library to Your Project</h2>
 <div class="line">    # and set the path to find it</div>
 <div class="line">    set_target_properties(LCD_I2C PROPERTIES</div>
 <div class="line">        IMPORTED_LOCATION ${LCD_I2C_PROJECT_PATH}/build/src/libLCD_I2C.a</div>
-<div class="line">        INTERFACE_INCLUDE_DIRECTORIES ${LCD_I2C_PROJECT_PATH}/src)</div>
+<div class="line">        INTERFACE_INCLUDE_DIRECTORIES ${LCD_I2C_PROJECT_PATH}/src/include)</div>
 <div class="line"> </div>
 <div class="line"># Create map/bin/hex/uf2 files</div>
 <div class="line">pico_add_extra_outputs(HelloWorld)</div>
@@ -143,27 +146,27 @@ Adding the Library to Your Project</h2>
 <div class="line"># Enable usb output, disable uart output</div>
 <div class="line">pico_enable_stdio_usb(HelloWorld 1)</div>
 <div class="line">pico_enable_stdio_uart(HelloWorld 0)</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md12"></a>
 C++ Usage</h3>
 <p >See the documentation sections on the <b>C++ Interface</b>, and <b>I2C Initialization</b>.</p>
-<h3><a class="anchor" id="autotoc_md12"></a>
+<h3><a class="anchor" id="autotoc_md13"></a>
 C Usage</h3>
 <p >If you prefer to write in C, there is an interface that "wraps" the C++ interface and makes a subset of the functions available in C. See the documentation section for the <b>C Interface</b> for the limitations and detailed usage information. Also see the documentation section for <b>I2C Initialization</b>.</p>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Built With</h1>
 <ul>
 <li>VSCODE and the MinGW tools</li>
 <li>Raspberry Pi Pico SDK</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Author</h1>
 <ul>
 <li><b>Keith Standiford</b> - <a href="https://github.com/KStandiford">KStandiford</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 License</h1>
 <p >This project is licensed under the MIT License - see the LICENSE file for details</p>
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 Acknowledgments</h1>
 <ul>
 <li><a href="https://www.adafruit.com/">Adafruit</a>, whose dedication to documenting their products made it easy to find the documentation to figure this stuff out.</li>
