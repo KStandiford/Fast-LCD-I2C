@@ -65,7 +65,7 @@ In your development environment (IDE) you need:
 
 You also need a display connected to the default Pi Pico I2C bus pins. *Make sure that you use a level shifter chip if you are running the display on 5 volts!*
 
-### Quick Start
+### Quick Start 
 
 The cleanest approach is to build the libraries on your system, and include them in
 the CMakeLists files for your project as demonstrated in the next section. However, if
