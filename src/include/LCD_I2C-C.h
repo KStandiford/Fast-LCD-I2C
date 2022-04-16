@@ -14,6 +14,7 @@
  * over most other drivers.
  * 
  * Use of the C++ version is encouraged.
+ * 
  **************************************************************************/
 #pragma once
 #include <stdint.h>

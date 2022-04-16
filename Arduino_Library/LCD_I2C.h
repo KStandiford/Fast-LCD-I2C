@@ -1,4 +1,4 @@
-/*
+/**
  * @file LCD_I2C.hpp
  * @author Keith Standiford
  * @brief C++ Implementation for the Fast LCD I2C driver
@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022 Keith Standiford. All rights reserved. 
  * @remark Based loosely on the Pico SDK example and the Arduino LiquidCrystal API
  * @remark Compiles for Arduino or for Pi Pico
+ * 
  */
 #pragma once
 //#define ARDUINO 
@@ -172,7 +173,7 @@ class LCD_I2C {
      * If false or missing, data is added to the output buffer and the buffer
      * is immediately written to the display. 
      */
-    void write_byte(byte val, bool Enable_Buffering = false);
+    void write_byte(byte val, bool Enable_Buffering = false)  noexcept;
 
     /**
      * Output a byte to the display as two 4 bit nibbles.
@@ -183,7 +184,7 @@ class LCD_I2C {
      * If false or missing, data is added to the output buffer and the buffer
      * is immediately written to the display. 
      */
-    void send_byte(byte val, int mode, bool Enable_Buffering = false);
+    void send_byte(byte val, int mode, bool Enable_Buffering = false)  noexcept;
 
     /**
      * Helper function to put the display in a known state.
@@ -191,7 +192,7 @@ class LCD_I2C {
      * In 4 bit mode, cleared, with the cursor at 0,0
      * Display enabled, backlight on
      */
-    void init();
+    void init()  noexcept;
 
 
  public:
@@ -742,7 +743,7 @@ class LCD_I2C {
      * @ingroup I2C_helper
      */
 
-    extern "C" int LCD_I2C_Setup(i2c_inst_t* I2C, uint SDA_Pin, uint SCL_Pin, uint I2C_Clock) ;
+    extern "C" int LCD_I2C_Setup(i2c_inst_t* I2C, uint SDA_Pin, uint SCL_Pin, uint I2C_Clock)   noexcept;
 ;
 #endif
 #endif

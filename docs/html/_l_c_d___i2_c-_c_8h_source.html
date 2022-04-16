@@ -49,100 +49,100 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="_l_c_d___i2_c-_c_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;hardware/i2c.h&gt;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">typedef</span> uint8_t byte;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="group___cinter.html#ga5d7416e2eb13bbb54eb49787063ccb64">   62</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga5d7416e2eb13bbb54eb49787063ccb64">lcd_init</a>(<span class="keywordtype">byte</span> address, <span class="keywordtype">byte</span> columns, <span class="keywordtype">byte</span> rows, i2c_inst_t *I2C) ;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;hardware/i2c.h&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">typedef</span> uint8_t byte;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="group___cinter.html#ga5d7416e2eb13bbb54eb49787063ccb64">   63</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga5d7416e2eb13bbb54eb49787063ccb64">lcd_init</a>(<span class="keywordtype">byte</span> address, <span class="keywordtype">byte</span> columns, <span class="keywordtype">byte</span> rows, i2c_inst_t *I2C) ;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span>  <a class="code hl_function" href="group___cinter.html#ga8b21f0bc5ba52289724c227bc9bcf992">lcd_writeChar</a>(<span class="keywordtype">byte</span> val) ;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gab3fc9b13bfff3cfc0cc87202a7995a09">lcd_writeString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> str[]) ;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span>  <a class="code hl_function" href="group___cinter.html#ga8b21f0bc5ba52289724c227bc9bcf992">lcd_writeChar</a>(<span class="keywordtype">byte</span> val) ;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gab3fc9b13bfff3cfc0cc87202a7995a09">lcd_writeString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> str[]) ;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="group___cinter.html#gaa64757d0886cefd337f258c1e38d02a3">   96</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gaa64757d0886cefd337f258c1e38d02a3">lcd_writeBuffer</a>(<span class="keyword">const</span> uint8_t *buffer, <span class="keywordtype">size_t</span> size) ;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga09f7a502044a92b9d3473a40743c8e1c">lcd_setCursor</a>(<span class="keywordtype">byte</span> line, <span class="keywordtype">byte</span> position) ;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga3aabf730aa4e0393bb5c959583c00a8e">lcd_home</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="group___cinter.html#gaa64757d0886cefd337f258c1e38d02a3">   97</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gaa64757d0886cefd337f258c1e38d02a3">lcd_writeBuffer</a>(<span class="keyword">const</span> uint8_t *buffer, <span class="keywordtype">size_t</span> size) ;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga09f7a502044a92b9d3473a40743c8e1c">lcd_setCursor</a>(<span class="keywordtype">byte</span> line, <span class="keywordtype">byte</span> position) ;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga3aabf730aa4e0393bb5c959583c00a8e">lcd_home</a>(<span class="keywordtype">void</span>) ;</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gad1eb3da3de1dc8ffd645beaae0af6be8">lcd_backlight</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gae9deadf701dc07956795d699f0095dbf">lcd_noBacklight</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gae2d8d9ac30df2abeea37b561c7736779">lcd_display</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga09b12ddef99d0c7edbc28d66a9a12d81">lcd_noDisplay</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gabe1001832032eb5e186a105c056c6f15">lcd_cursor</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga9c15288a92332366ac579d530fa76131">lcd_noCursor</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga16a9d3d6b40db9851ad26fde8b416181">lcd_blink</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gae8d00a03b647f3fd696a7fb28da510f3">lcd_noBlink</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga7c116040d6ddf59714f9c6f07c559f4e">lcd_scrollDisplayLeft</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gafa6aba4ee94d9fc7dcccefb902c70e25">lcd_scrollDisplayRight</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga59bed270ccc97b52a7f7d5a75dc8c6ca">lcd_autoscroll</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga210f2a3fc1f0cec991a5138dc44eaef6">lcd_noAutoscroll</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga0894b08c10da16427e058bc024245d40">lcd_leftToRight</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gab1aec4563f87f9f33cb3cdd99f7e9998">lcd_rightToLeft</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gac1962b2660b680e37523147f0d4ad301">lcd_createChar</a>(<span class="keywordtype">byte</span> charnum, <span class="keyword">const</span> <span class="keywordtype">byte</span> char_map[])  ;</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="preprocessor">#ifndef I2C_Setup_defined</span></div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="preprocessor">    #define I2C_Setup_defined</span></div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="comment">/*  </span></div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="comment">     * @brief Helper function to set up the I2C bus on Pi Pico</span></div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="comment">     * </span></div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="comment">     * Sets up the I2C bus given instance on the given pins with a specified </span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="comment">     * clock rate. Defines the pins for the pico tools.</span></div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="comment">     * </span></div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="comment">     * @param I2C   is the I2C bus instance to use. Either i2c0 or i2c1.</span></div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="comment">     * @param SDA   is the Pi Pico Pin for the I2C SDA (data) line. </span></div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="comment">     * @param SCL   is the Pi Pico Pin for the I2C SCL (clock) line.</span></div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="comment">     * @param I2C_Clock is the I2C bus speed. Typically 100000 or 400000.</span></div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="comment">     * </span></div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="comment">     * @return (int)  The actual *(theoretical)* I2C speed from i2c_init</span></div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="comment">     * </span></div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="group___i2_c__helper.html#ga5707bb107d2b8adf096fb0348fd5df7f">LCD_I2C_Setup</a>(i2c_inst_t* I2C, uint SDA_Pin, uint SCL_Pin, uint I2C_Clock) ;</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>;</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>}</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gad1eb3da3de1dc8ffd645beaae0af6be8">lcd_backlight</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gae9deadf701dc07956795d699f0095dbf">lcd_noBacklight</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gae2d8d9ac30df2abeea37b561c7736779">lcd_display</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga09b12ddef99d0c7edbc28d66a9a12d81">lcd_noDisplay</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gabe1001832032eb5e186a105c056c6f15">lcd_cursor</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga9c15288a92332366ac579d530fa76131">lcd_noCursor</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga16a9d3d6b40db9851ad26fde8b416181">lcd_blink</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gae8d00a03b647f3fd696a7fb28da510f3">lcd_noBlink</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga7c116040d6ddf59714f9c6f07c559f4e">lcd_scrollDisplayLeft</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gafa6aba4ee94d9fc7dcccefb902c70e25">lcd_scrollDisplayRight</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga59bed270ccc97b52a7f7d5a75dc8c6ca">lcd_autoscroll</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga210f2a3fc1f0cec991a5138dc44eaef6">lcd_noAutoscroll</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#ga0894b08c10da16427e058bc024245d40">lcd_leftToRight</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gab1aec4563f87f9f33cb3cdd99f7e9998">lcd_rightToLeft</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group___cinter.html#gac1962b2660b680e37523147f0d4ad301">lcd_createChar</a>(<span class="keywordtype">byte</span> charnum, <span class="keyword">const</span> <span class="keywordtype">byte</span> char_map[])  ;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="preprocessor">#ifndef I2C_Setup_defined</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="preprocessor">    #define I2C_Setup_defined</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="comment">/*  </span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="comment">     * @brief Helper function to set up the I2C bus on Pi Pico</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="comment">     * </span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="comment">     * Sets up the I2C bus given instance on the given pins with a specified </span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="comment">     * clock rate. Defines the pins for the pico tools.</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="comment">     * </span></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="comment">     * @param I2C   is the I2C bus instance to use. Either i2c0 or i2c1.</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="comment">     * @param SDA   is the Pi Pico Pin for the I2C SDA (data) line. </span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="comment">     * @param SCL   is the Pi Pico Pin for the I2C SCL (clock) line.</span></div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="comment">     * @param I2C_Clock is the I2C bus speed. Typically 100000 or 400000.</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="comment">     * </span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="comment">     * @return (int)  The actual *(theoretical)* I2C speed from i2c_init</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="comment">     * </span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="group___i2_c__helper.html#gafa2828008b4580e6434ae879f93814fe">LCD_I2C_Setup</a>(i2c_inst_t* I2C, uint SDA_Pin, uint SCL_Pin, uint I2C_Clock) ;</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>;</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>}</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
 <div class="ttc" id="agroup___cinter_html_ga0894b08c10da16427e058bc024245d40"><div class="ttname"><a href="group___cinter.html#ga0894b08c10da16427e058bc024245d40">lcd_leftToRight</a></div><div class="ttdeci">void lcd_leftToRight(void)</div><div class="ttdoc">Sets the text direction to left to right. Each character output advances the cursor one position to t...</div><div class="ttdef"><b>Definition:</b> LCD_I2C-C.cpp:179</div></div>
 <div class="ttc" id="agroup___cinter_html_ga09b12ddef99d0c7edbc28d66a9a12d81"><div class="ttname"><a href="group___cinter.html#ga09b12ddef99d0c7edbc28d66a9a12d81">lcd_noDisplay</a></div><div class="ttdeci">void lcd_noDisplay(void)</div><div class="ttdoc">Turns the display off without modifying data on it.</div><div class="ttdef"><b>Definition:</b> LCD_I2C-C.cpp:143</div></div>
 <div class="ttc" id="agroup___cinter_html_ga09f7a502044a92b9d3473a40743c8e1c"><div class="ttname"><a href="group___cinter.html#ga09f7a502044a92b9d3473a40743c8e1c">lcd_setCursor</a></div><div class="ttdeci">void lcd_setCursor(byte line, byte position)</div><div class="ttdoc">Move the input cursor to a location on the screen.</div><div class="ttdef"><b>Definition:</b> LCD_I2C-C.cpp:75</div></div>
@@ -165,7 +165,7 @@ $(function() {
 <div class="ttc" id="agroup___cinter_html_gae8d00a03b647f3fd696a7fb28da510f3"><div class="ttname"><a href="group___cinter.html#gae8d00a03b647f3fd696a7fb28da510f3">lcd_noBlink</a></div><div class="ttdeci">void lcd_noBlink(void)</div><div class="ttdoc">Disable the blinking inverted cursor at the current cursor location.</div><div class="ttdef"><b>Definition:</b> LCD_I2C-C.cpp:131</div></div>
 <div class="ttc" id="agroup___cinter_html_gae9deadf701dc07956795d699f0095dbf"><div class="ttname"><a href="group___cinter.html#gae9deadf701dc07956795d699f0095dbf">lcd_noBacklight</a></div><div class="ttdeci">void lcd_noBacklight(void)</div><div class="ttdoc">Turn off the display backlight</div><div class="ttdef"><b>Definition:</b> LCD_I2C-C.cpp:107</div></div>
 <div class="ttc" id="agroup___cinter_html_gafa6aba4ee94d9fc7dcccefb902c70e25"><div class="ttname"><a href="group___cinter.html#gafa6aba4ee94d9fc7dcccefb902c70e25">lcd_scrollDisplayRight</a></div><div class="ttdeci">void lcd_scrollDisplayRight(void)</div><div class="ttdoc">Scrolls the display and cursor one position to the right. home() will restore it to its original posi...</div><div class="ttdef"><b>Definition:</b> LCD_I2C-C.cpp:155</div></div>
-<div class="ttc" id="agroup___i2_c__helper_html_ga5707bb107d2b8adf096fb0348fd5df7f"><div class="ttname"><a href="group___i2_c__helper.html#ga5707bb107d2b8adf096fb0348fd5df7f">LCD_I2C_Setup</a></div><div class="ttdeci">int LCD_I2C_Setup(i2c_inst_t *I2C, uint SDA_Pin, uint SCL_Pin, uint I2C_Clock)</div><div class="ttdoc">Helper function to set up the I2C bus on Pi Pico.</div><div class="ttdef"><b>Definition:</b> LCD_I2C.cpp:314</div></div>
+<div class="ttc" id="agroup___i2_c__helper_html_gafa2828008b4580e6434ae879f93814fe"><div class="ttname"><a href="group___i2_c__helper.html#gafa2828008b4580e6434ae879f93814fe">LCD_I2C_Setup</a></div><div class="ttdeci">int LCD_I2C_Setup(i2c_inst_t *I2C, uint SDA_Pin, uint SCL_Pin, uint I2C_Clock)</div><div class="ttdoc">Helper function to set up the I2C bus on Pi Pico.</div><div class="ttdef"><b>Definition:</b> LCD_I2C.cpp:314</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

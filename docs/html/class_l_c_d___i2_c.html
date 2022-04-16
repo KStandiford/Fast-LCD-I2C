@@ -250,11 +250,11 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>The Pi Pico pins and the I2C bus are <b>not</b> initialized! (See <a class="el" href="group___i2_c__helper.html#ga5707bb107d2b8adf096fb0348fd5df7f" title="Helper function to set up the I2C bus on Pi Pico.">LCD_I2C_Setup()</a>)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The Pi Pico pins and the I2C bus are <b>not</b> initialized! (See <a class="el" href="group___i2_c__helper.html#gafa2828008b4580e6434ae879f93814fe" title="Helper function to set up the I2C bus on Pi Pico.">LCD_I2C_Setup()</a>)</dd></dl>
 <p>The Pico constructor initializes the object using the provided I2C instance and calls the display's Init() function.</p>
 <p >Remember that constructor usage for ARDUINO and Pi Pico is quite different.</p>
 <p >For ARDUINO: Create the object with the constructor and then call the begin() method. If you wish to change the bus speed, do it <em>before</em> calling begin().</p>
-<p >For PI PICO: Initialize the I2C instance and pins (See <a class="el" href="group___i2_c__helper.html#ga5707bb107d2b8adf096fb0348fd5df7f" title="Helper function to set up the I2C bus on Pi Pico.">LCD_I2C_Setup()</a>) and then create the object by calling the constructor. The bus speed is set during the I2C bus initialization. </p>
+<p >For PI PICO: Initialize the I2C instance and pins (See <a class="el" href="group___i2_c__helper.html#gafa2828008b4580e6434ae879f93814fe" title="Helper function to set up the I2C bus on Pi Pico.">LCD_I2C_Setup()</a>) and then create the object by calling the constructor. The bus speed is set during the I2C bus initialization. </p>
 
 </div>
 </div>

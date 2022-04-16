@@ -28,4 +28,5 @@ var menudata={children:[
 {text:"Arduino Differences",url:"./group___arduino__diff.html"},
 {text:"C Interface",url:"group___cinter.html"},
 {text:"I2C Initialization",url:"group___i2_c__helper.html"},
+{text:"Examples",url:"examples.html"},
 {text:"Theory of Operation",url:"theory.html"}]}

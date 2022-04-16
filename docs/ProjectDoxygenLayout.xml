@@ -35,11 +35,11 @@
       <tab type="filelist" visible="yes" title="" intro=""/>
       <tab type="globals" visible="yes" title="" intro=""/>
     </tab>
-    <tab type="examples" visible="yes" title="" intro=""/>  
     <tab type="user" url="@ref LCD_I2C" title="C++ Interface" />
     <tab type="user" url="./group___arduino__diff.html" title="Arduino Differences" />
     <tab type="user" url="@ref Cinter" title="C Interface" />
     <tab type="user" url="@ref I2C_helper" title="I2C Initialization" />
+    <tab type="examples" visible="yes" title="" intro=""/>  
     <tab type="user" url="@ref theory" title="Theory of Operation" />
   </navindex>
 

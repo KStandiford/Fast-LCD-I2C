@@ -35,7 +35,7 @@ LCD_I2C* lcd = NULL;
 A helper to test if we have been initialized. If not, initialize anyway with default parameters.
 */
 
-void nullCheck() {
+void nullCheck()   noexcept {
     if(lcd != NULL) return;
     lcd = new LCD_I2C(Default_Addr, MAX_CHARS, MAX_LINES, PICO_DEFAULT_I2C_INSTANCE);
 }
@@ -45,7 +45,7 @@ void nullCheck() {
 
 // Pi Pico version in C. If already initialized, destroy the old one!
 
-void lcd_init(byte address, byte columns, byte rows, i2c_inst * I2C) {
+void lcd_init(byte address, byte columns, byte rows, i2c_inst * I2C)   noexcept {
 
     if(lcd != NULL) {
         lcd->show();    // be nice and dump the buffer
@@ -59,130 +59,130 @@ void lcd_init(byte address, byte columns, byte rows, i2c_inst * I2C) {
 
 
 
-void lcd_clear(void)
+void lcd_clear(void)  noexcept
 {
     nullCheck();
     lcd->clear();
 }
 
-void lcd_home(void)
+void lcd_home(void)  noexcept
 {
     nullCheck();
     lcd->home();
 }
 
 // go to location on LCD
-void lcd_setCursor(byte line, byte position)
+void lcd_setCursor(byte line, byte position)  noexcept
 {
     nullCheck();
     lcd->setCursor( line,  position);
 }
 
 
-void lcd_writeString(const char s[])
+void lcd_writeString(const char s[])  noexcept
 {
     nullCheck();
     lcd->writeString(s);
 }
 
-void lcd_writeChar(byte c)
+void lcd_writeChar(byte c)  noexcept
 {
     nullCheck();
     lcd->writeChar(c);
 }
 
-void lcd_writeBuffer(const uint8_t buffer[], size_t size)
+void lcd_writeBuffer(const uint8_t buffer[], size_t size)  noexcept
 {
     nullCheck();
     lcd->write(buffer, size);
 }
 
 
-void lcd_backlight(void)
+void lcd_backlight(void)  noexcept
 {
     nullCheck();
     lcd->backlight();
 }
 
-void lcd_noBacklight()
+void lcd_noBacklight()  noexcept
 {
     nullCheck();
     lcd->noBacklight();
 }
 
-void lcd_cursor(void)
+void lcd_cursor(void)  noexcept
 {
     nullCheck();
     lcd->cursor();
 }
 
-void lcd_noCursor(void)
+void lcd_noCursor(void)  noexcept
 {
     nullCheck();
     lcd->noCursor();
 }
 
-void lcd_blink(void)
+void lcd_blink(void)  noexcept
 {
     nullCheck();
     lcd->blink();
 }
 
-void lcd_noBlink(void)
+void lcd_noBlink(void)  noexcept
 {
     nullCheck();
     lcd->noBlink();
 }
 
-void lcd_display(void)
+void lcd_display(void)  noexcept
 {
     nullCheck();
     lcd->display();
 }
 
-void lcd_noDisplay(void)
+void lcd_noDisplay(void)  noexcept
 {
     nullCheck();
     lcd->noDisplay();
 }
 
-void lcd_scrollDisplayLeft(void)
+void lcd_scrollDisplayLeft(void)  noexcept
 {
     nullCheck();
     lcd->scrollDisplayLeft();
 }
 
-void lcd_scrollDisplayRight(void)
+void lcd_scrollDisplayRight(void)  noexcept
 {
     nullCheck();
     lcd->scrollDisplayRight();
 }
 
-void lcd_autoscroll(void)
+void lcd_autoscroll(void)  noexcept
 {
     nullCheck();
     lcd->autoscroll();
 }
 
-void lcd_noAutoscroll(void)
+void lcd_noAutoscroll(void)  noexcept
 {
     nullCheck();
     lcd->noAutoscroll();
 }
 
-void lcd_rightToLeft(void)
+void lcd_rightToLeft(void)  noexcept
 {
     nullCheck();
     lcd->rightToLeft();
 }
 
-void lcd_leftToRight(void)
+void lcd_leftToRight(void)  noexcept
 {
     nullCheck();
     lcd->leftToRight();
 }
 
-void lcd_createChar(byte charnum, const byte char_map[])
+void lcd_createChar(byte charnum, const byte char_map[])  noexcept
 {
     nullCheck();
     lcd->createChar(charnum, char_map);

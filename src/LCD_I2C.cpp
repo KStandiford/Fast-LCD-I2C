@@ -53,7 +53,7 @@ LCD_I2C::LCD_I2C(byte address, byte columns, byte rows, i2c_inst * I2C) :
 // commands
 
 /* Quick helper function for single byte transfers */
-void LCD_I2C::write_byte(byte val,bool Enable_Buffering )  
+void LCD_I2C::write_byte(byte val,bool Enable_Buffering )   
 {
     static byte data;
 

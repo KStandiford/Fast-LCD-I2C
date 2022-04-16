@@ -1,0 +1,32 @@
+/**
+ * @file Examples.dox
+ * @author Keith Standiford
+ * @brief 
+ * @version 1.0
+ * @date 2022-04-16
+ * 
+ * @copyright Copyright (c) 2022. Keith Standiford. All Rights Reserved
+ * 
+ */
+
+/**
+ * @example Demo_All.c
+ * This is a C example which demonstrates all the operating modes
+ * of the display.
+ * 
+ * @example HelloWorld.c
+ * This is a C example showing (almost) the bare minimum to write
+ * something to the display.
+ * 
+ * @example Demo_All.cpp
+ * This is a C++ example which demonstrates all the operating modes
+ * of the display. 
+ * 
+ * @example TimingTest.cpp
+ * This is a C++ example which tests the timing of the Fast-LCD-I2C driver.
+ * The driver is compared against a user supplied "brand X" driver which
+ * has sources names `xLCD_I2C.cpp` and `xLCD_I2c.hpp`. The benchmark is to update 
+ * four fields of six characters each. Each field requires a `setCursor` command
+ * before the field is written.
+ * 
+ */

@@ -48,7 +48,7 @@ $(function() {
 <p >On the Pi Pico, if you prefer to work in C a reasonably complete subset of the program interface is available here with almost all of the functionality of the C++ version. The advanced buffering commands are <em>not</em> available. Even without them, substantial speed improvements are still achieved. (But C++ is still recommended.) </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Initialization</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp61bcd96a2c1f8026527cbf2019d6e9a4"></a>Set up the lcd display. The I2C pins are <em>not</em> initialized. See <a class="el" href="group___i2_c__helper.html#ga5707bb107d2b8adf096fb0348fd5df7f" title="Helper function to set up the I2C bus on Pi Pico.">LCD_I2C_Setup()</a>. </p>
+<tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp61bcd96a2c1f8026527cbf2019d6e9a4"></a>Set up the lcd display. The I2C pins are <em>not</em> initialized. See <a class="el" href="group___i2_c__helper.html#gafa2828008b4580e6434ae879f93814fe" title="Helper function to set up the I2C bus on Pi Pico.">LCD_I2C_Setup()</a>. </p>
 </td></tr>
 <tr class="memitem:ga5d7416e2eb13bbb54eb49787063ccb64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___cinter.html#ga5d7416e2eb13bbb54eb49787063ccb64">lcd_init</a> (byte address, byte columns, byte rows, i2c_inst_t *I2C)</td></tr>
 <tr class="memdesc:ga5d7416e2eb13bbb54eb49787063ccb64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the lcd display.  <a href="group___cinter.html#ga5d7416e2eb13bbb54eb49787063ccb64">More...</a><br /></td></tr>
@@ -142,6 +142,9 @@ $(function() {
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_autoscroll </td>
@@ -151,6 +154,11 @@ $(function() {
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Turns on automatic scrolling of the display. </p>
@@ -162,6 +170,9 @@ $(function() {
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_backlight </td>
@@ -171,6 +182,11 @@ $(function() {
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Turn on the display backlight. </p>
@@ -182,6 +198,9 @@ $(function() {
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_blink </td>
@@ -191,6 +210,11 @@ $(function() {
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Display the blinking inverted cursor at the current cursor location. </p>
@@ -202,6 +226,9 @@ $(function() {
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_clear </td>
@@ -211,6 +238,11 @@ $(function() {
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Clear the display. </p>
@@ -222,6 +254,9 @@ $(function() {
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_createChar </td>
@@ -241,6 +276,11 @@ $(function() {
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Create a custom character. </p>
@@ -260,6 +300,9 @@ $(function() {
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_cursor </td>
@@ -269,6 +312,11 @@ $(function() {
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Display the underline cursor at the current cursor location. </p>
@@ -280,6 +328,9 @@ $(function() {
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_display </td>
@@ -289,6 +340,11 @@ $(function() {
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Turns the display on without modifying data on it. </p>
@@ -301,6 +357,9 @@ $(function() {
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_home </td>
@@ -310,6 +369,11 @@ $(function() {
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>"Home" the display. </p>
@@ -370,7 +434,7 @@ $(function() {
 discarded (and destroyed), and a new one created and initialized with the given </dd>
 <dd>
 parameters. Use with care!</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>The Pi Pico pins and the I2C bus are <b>not</b> initialized! (But see See <a class="el" href="group___i2_c__helper.html#ga5707bb107d2b8adf096fb0348fd5df7f" title="Helper function to set up the I2C bus on Pi Pico.">LCD_I2C_Setup()</a>.) </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The Pi Pico pins and the I2C bus are <b>not</b> initialized! (But see See <a class="el" href="group___i2_c__helper.html#gafa2828008b4580e6434ae879f93814fe" title="Helper function to set up the I2C bus on Pi Pico.">LCD_I2C_Setup()</a>.) </dd></dl>
 
 </div>
 </div>
@@ -379,6 +443,9 @@ parameters. Use with care!</dd></dl>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_leftToRight </td>
@@ -388,6 +455,11 @@ parameters. Use with care!</dd></dl>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Sets the text direction to left to right. Each character output advances the cursor one position to the right. This is the default condition. </p>
@@ -399,6 +471,9 @@ parameters. Use with care!</dd></dl>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_noAutoscroll </td>
@@ -408,6 +483,11 @@ parameters. Use with care!</dd></dl>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Turns off automatic scrolling of the display. </p>
@@ -419,6 +499,9 @@ parameters. Use with care!</dd></dl>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_noBacklight </td>
@@ -428,6 +511,11 @@ parameters. Use with care!</dd></dl>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Turn off the display backlight <br  />
@@ -440,6 +528,9 @@ parameters. Use with care!</dd></dl>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_noBlink </td>
@@ -449,6 +540,11 @@ parameters. Use with care!</dd></dl>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Disable the blinking inverted cursor at the current cursor location. </p>
@@ -460,6 +556,9 @@ parameters. Use with care!</dd></dl>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_noCursor </td>
@@ -469,6 +568,11 @@ parameters. Use with care!</dd></dl>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Hides the underline cursor at the current cursor location. </p>
@@ -480,6 +584,9 @@ parameters. Use with care!</dd></dl>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_noDisplay </td>
@@ -489,6 +596,11 @@ parameters. Use with care!</dd></dl>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Turns the display off without modifying data on it. </p>
@@ -501,6 +613,9 @@ parameters. Use with care!</dd></dl>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_rightToLeft </td>
@@ -510,6 +625,11 @@ parameters. Use with care!</dd></dl>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Sets the text direction to right to left. Each character output advances the cursor one position to the left. </p>
@@ -521,6 +641,9 @@ parameters. Use with care!</dd></dl>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_scrollDisplayLeft </td>
@@ -530,6 +653,11 @@ parameters. Use with care!</dd></dl>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Scrolls the display and cursor one position to the left. home() will restore it to its original position. </p>
@@ -541,6 +669,9 @@ parameters. Use with care!</dd></dl>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_scrollDisplayRight </td>
@@ -550,6 +681,11 @@ parameters. Use with care!</dd></dl>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Scrolls the display and cursor one position to the right. home() will restore it to its original position. </p>
@@ -561,6 +697,9 @@ parameters. Use with care!</dd></dl>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_setCursor </td>
@@ -580,6 +719,11 @@ parameters. Use with care!</dd></dl>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Move the input cursor to a location on the screen. </p>
@@ -635,6 +779,9 @@ parameters. Use with care!</dd></dl>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_writeChar </td>
@@ -644,6 +791,11 @@ parameters. Use with care!</dd></dl>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Output a character to the screen. </p>
@@ -661,6 +813,9 @@ parameters. Use with care!</dd></dl>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void lcd_writeString </td>
@@ -670,6 +825,11 @@ parameters. Use with care!</dd></dl>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Output a string to the screen. Naming is more in the style of the Pico SDK, and the Enable_Buffering parameter can be utilized. </p>
