@@ -12,9 +12,9 @@
 // Includes for Arduino or Pi Pico
 //#define ARDUINO 
 #ifdef ARDUINO
-#include <inttypes.h>
-#include <Print.h>
-#include <wire.h>
+//#include <inttypes.h>
+//#include <Print.h>
+//#include <Wire.h>
 #include "LCD_I2C.h"
 #else
 #include <hardware/gpio.h>

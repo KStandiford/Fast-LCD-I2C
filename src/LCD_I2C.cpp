@@ -2,8 +2,8 @@
  * @file LCD_I2C.cpp
  * @author Keith Standiford
  * @brief C++ Implementation for the Fast LCD I2C driver
- * @version 1.0
- * @date 2022-04-10
+ * @version 1.01
+ * @date 2022-07-08
  * 
  * @copyright Copyright (c) 2022 Keith Standiford. All rights reserved. 
  * 
@@ -12,9 +12,9 @@
 // Includes for Arduino or Pi Pico
 //#define ARDUINO 
 #ifdef ARDUINO
-#include <inttypes.h>
-#include <Print.h>
-#include <wire.h>
+//#include <inttypes.h>
+//#include <Print.h>
+//#include <Wire.h>
 #include "LCD_I2C.h"
 #else
 #include <hardware/gpio.h>

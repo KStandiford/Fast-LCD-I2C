@@ -2,8 +2,8 @@
  * @file LCD_I2C.hpp
  * @author Keith Standiford
  * @brief C++ Implementation for the Fast LCD I2C driver
- * @version 1.00
- * @date 2022-04-10
+ * @version 1.01
+ * @date 2022-07-08git commit
  * 
  * @copyright Copyright (c) 2022 Keith Standiford. All rights reserved. 
  * @remark Based loosely on the Pico SDK example and the Arduino LiquidCrystal API
@@ -16,9 +16,10 @@
 //  If we are compiling for Arduino, we need some extra files
 
 #ifdef ARDUINO
+#include <Arduino.h>
 #include <inttypes.h>
 #include <Print.h>
-#include <wire.h>
+#include <Wire.h>
 //  and some function alias'
 inline void sleep_ms(uint32_t time) {delay(time);}
 inline void sleep_us(uint64_t time) {delayMicroseconds(time);}
@@ -115,7 +116,8 @@ class LCD_I2C {
     byte _backlight;
     byte _last_mode;
 
-    static constexpr uint8_t row_address_offset[MAX_LINES] = {0x80, 0xC0, 0x80 + 20, 0xC0 + 20};
+    uint8_t row_address_offset[MAX_LINES] = {0x80, 0xC0, 0x80 + 20, 0xC0 + 20};
+    
     /*
      * For Arduino, the I2C interface (Wire) has an internal buffer
      * The buffer length is defined as BUFFER_LENGTH.
