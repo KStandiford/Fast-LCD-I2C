@@ -3,7 +3,7 @@
  * @author Keith Standiford
  * @brief C++ Implementation for the Fast LCD I2C driver
  * @version 1.01
- * @date 2022-07-08git commit
+ * @date 2022-07-08
  * 
  * @copyright Copyright (c) 2022 Keith Standiford. All rights reserved. 
  * @remark Based loosely on the Pico SDK example and the Arduino LiquidCrystal API
