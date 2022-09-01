@@ -25,7 +25,8 @@ These benchmarks are against popular and commonly used (anonymous) repositories.
 
 Download the repository. On Arduino, the easiest is to simply download the zip file and unzip it somewhere convenient. For Pi Pico, you more likely should clone the repository into a convenient place.
 
-Note that on all platforms, the complete documentation can be accessed with a web browser at `/docs/html/index.html`.
+Note that on all platforms, the complete documentation can be accessed with a web browser at `/docs/html/index.html` or you can
+view it online [here](https://kstandiford.github.io/Fast-LCD-I2C/).
 
 ### Getting Started on Arduino
 
