@@ -2,8 +2,8 @@
  * @file LCD_I2C-C.cpp
  * @author Keith Standiford
  * @brief C wrappers for the Fast LCD I2C driver
- * @version 1.0
- * @date 2022-04-10
+ * @version 1.2
+ * @date 2025-12-30
  * 
  * @copyright Copyright (c) 2022 Keith Standiford. All rights reserved.
  * 
@@ -37,7 +37,7 @@ A helper to test if we have been initialized. If not, initialize anyway with def
 
 void nullCheck()   noexcept {
     if(lcd != NULL) return;
-    lcd = new LCD_I2C(Default_Addr, MAX_CHARS, MAX_LINES, PICO_DEFAULT_I2C_INSTANCE);
+    lcd = new LCD_I2C(Default_Addr, MAX_CHARS, MAX_LINES, i2c_default);
 }
 
 
@@ -188,4 +188,12 @@ void lcd_createChar(byte charnum, const byte char_map[])  noexcept
     lcd->createChar(charnum, char_map);
 }
 
-
+void lcd_destroy(void)  noexcept
+{
+    if(lcd != NULL) {
+        lcd->show();    // be nice and dump the buffer
+        sleep_us(2000); // wait for display to be idle for sure...
+        delete lcd;
+        lcd = NULL;
+    }
+}

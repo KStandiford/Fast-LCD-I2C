@@ -55,14 +55,13 @@ See the documentation sections on the **C++ Interface**, and  **Arduino Differen
 
 ## Getting Started on Raspberry Pi Pico
 
-On the Pi Pico, programming in C++ will make all of the features of this package available. This will also make some advanced cases like multiple displays very easy. However, if you prefer to work in C, a reasonably complete subset of the program interface is available with almost all of the functionality of the C++ version. There are examples included for both languages.
+On the Pi Pico, programming in C++ will make all of the features of this package available. This will also make some 
+advanced cases like multiple displays very easy. However, if you prefer to work in C, a reasonably complete subset of 
+the program interface is available with almost all of the functionality of the C++ version. There are examples included for both languages.
 
 ### Prerequisites
 
-In your development environment (IDE) you need:
- - The Pi Pico SDK installed with the environmental PATH variables set.
- - CMAKE installed.
- - MAKE installed.
+The Project has been updated for compatibility with the Pi Pico Extension for VSCODE. 
 
 You also need a display connected to the default Pi Pico I2C bus pins. *Make sure that you use a level shifter chip if you are running the display on 5 volts!*
 
@@ -80,8 +79,8 @@ but you should include *only* `LCD_I2C-C.h` in your program.
 
 ### Generating the Library and Examples
 
-Running CMAKE in the base directory of the repository will create the library and examples in a directory tree 
-in the `build` folder. From there you can load the examples into the Pi Pico.
+Build commands from CMAKE will create the library and examples in a directory tree 
+in the `build` folder. From there you can use CMAKE to select the exmple to load into the Pi Pico.
 
 ### Adding the Library to Your Project
 
@@ -160,9 +159,18 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 
-* [Adafruit](https://www.adafruit.com/), whose dedication to documenting their products made it easy to find the documentation to figure this stuff out.
+* [Adafruit](https://www.adafruit.com/), whose dedication to documenting their products made it easy to find the 
+documentation to figure this stuff out.
 * [Cristian Cristea](https://github.com/cristiancristea00), who's code taught me a lot about modern professional C++.
 * [Stan Reynolds](https://www.linkedin.com/in/stanley-reynolds-4bb86040), an old mentor and friend who once said 
 "If you're going to do something stupid, at least make sure that it's *fast*!
+
+##Version 1.2
+
+* Resolved Issue 3 by removing several reference to PICO_DEFAULT_I2C_INSTANCE which were left over from legacy examples 
+but now prevented compilation.
+* Updated CMakeLists.text for Pi Pico VSCODE Extension compatibility.
+* Updated documentation generation for compatabiity with latest DOXYGEN release.
+* Minor tweaks to VSCODE setup .jason file for multi target projects.
 
 

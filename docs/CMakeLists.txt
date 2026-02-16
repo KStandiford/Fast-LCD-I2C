@@ -12,7 +12,7 @@ set(README_HDR "{#mainpage}")
 unset(em)
 set(ex "%")
 configure_file(readme.md.in ${CMAKE_CURRENT_SOURCE_DIR}/mainpage.md @ONLY)
-message(STATUS "Readme Configured")
+message(STATUS "Readme Configured") 
 
 # Make sure Doxygen is available
 
@@ -28,14 +28,17 @@ if(Doxygen_FOUND)
         "${PROJECT_SOURCE_DIR}/src/include/*.h"
         "${PROJECT_SOURCE_DIR}/src/*.cpp" "${PROJECT_SOURCE_DIR}/src/*.c" 
         "${CMAKE_CURRENT_SOURCE_DIR}/*.in" "${CMAKE_CURRENT_SOURCE_DIR}/*.xml" 
-        "${CMAKE_CURRENT_SOURCE_DIR}/*.dox")
-    #message(STATUS "${DEPENDS_LIST}")
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.dox" "${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile*"
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.css"
+        )
+
+    message( "DEPENDS ON: " "${DEPENDS_LIST}") 
     add_custom_command( OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/html/group___arduino__diff.html
         DEPENDS ${DEPENDS_LIST}    
         COMMAND Doxygen::doxygen ${CMAKE_CURRENT_SOURCE_DIR}/DoxyfileA
         COMMAND Doxygen::doxygen ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile
-        COMMENT "Running Doxygen for Arduino Docs"
-        VERBATUM
+    #   COMMENT "Running Doxygen for Arduino Docs"
+        VERBATUM 
         )
 
     add_custom_target(dummy ALL  DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/html/group___arduino__diff.html

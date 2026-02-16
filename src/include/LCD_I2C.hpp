@@ -2,8 +2,8 @@
  * @file LCD_I2C.hpp
  * @author Keith Standiford
  * @brief C++ Implementation for the Fast LCD I2C driver
- * @version 1.01
- * @date 2022-07-08
+ * @version 1.1
+ * @date 2025-12-30
  * 
  * @copyright Copyright (c) 2022 Keith Standiford. All rights reserved. 
  * @remark Based loosely on the Pico SDK example and the Arduino LiquidCrystal API
@@ -305,7 +305,7 @@ class LCD_I2C {
      * The bus speed is set during the I2C bus initialization.
      * 
      */
-    LCD_I2C(byte address, byte columns, byte rows, i2c_inst *I2C = PICO_DEFAULT_I2C_INSTANCE) noexcept;
+    LCD_I2C(byte address, byte columns, byte rows, i2c_inst *I2C = i2c_default) noexcept;
     ///@}
 
     #endif
